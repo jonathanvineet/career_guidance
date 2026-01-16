@@ -8,25 +8,27 @@ import JobSearch from "./Pages/JobSearch";
 import Appoinments from "./Pages/Appoinments";
 import SimilarJobs from "./Pages/SimilarJobs";
 import Quiz from "./Pages/Quiz.js";
+import Background from "./Components/Background";
 
 function App() {
   return (
-    <div className="App">
-      {window.location.pathname!="/auth/signin"  &&
-        <Header/>
+    <div className="App text-white selection:bg-purple-500/30">
+      <Background />
+      {window.location.pathname != "/auth/signin" &&
+        <Header />
       }
-      <div className="">
+      <div className="relative z-10 transition-all duration-500">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/auth">
-            <Route path="signup" element={<RegisterCard/>}/>
-            <Route path="signin" element={<LoginCard/>} />
+            <Route path="signup" element={<RegisterCard />} />
+            <Route path="signin" element={<LoginCard />} />
           </Route>
-          <Route path="parse" element={<ResumeParse/>} />
-          <Route path="jobs" element={<JobSearch/>} />
-          <Route path="appoinments" element={<Appoinments/>} />
-          <Route path="similar-jobs" element={<SimilarJobs/>} />
-          <Route path="quiz" element={<Quiz/>} />
+          <Route path="parse" element={<ResumeParse />} />
+          <Route path="jobs" element={<JobSearch />} />
+          <Route path="appoinments" element={<Appoinments />} />
+          <Route path="similar-jobs" element={<SimilarJobs />} />
+          <Route path="quiz" element={<Quiz />} />
         </Routes>
       </div>
     </div>
