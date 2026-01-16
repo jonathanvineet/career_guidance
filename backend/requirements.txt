@@ -1,20 +1,15 @@
-# Backend Python Dependencies
-Flask==2.3.2
-flask-cors==4.0.0
-pandas==2.0.3
-numpy==1.24.3
-scikit-learn==1.3.0
-spacy==3.6.0
-PyPDF2==3.0.1
-pdf2image==1.16.3
-opencv-python==4.8.0
-pytesseract==0.3.10
-pymupdf==1.23.3
-Pillow==10.0.0
+# Backend Python Dependencies (Python 3.14+ compatible)
+Flask>=3.0.0
+flask-cors>=4.0.0
+pandas>=2.0.0
+numpy>=1.20.0
+scikit-learn>=1.0.0
+PyPDF2>=3.0.0
+pdf2image>=1.17.0
+opencv-python>=4.5.0
+pytesseract>=0.3.10
+pymupdf>=1.20.0
+Pillow>=9.0.0
 
-# To install spaCy model, run:
-# python -m spacy download en_core_web_sm
-
-# System dependencies (install separately):
-# - Tesseract OCR: brew install tesseract (macOS) or apt-get install tesseract-ocr (Linux)
-# - Poppler: brew install poppler (macOS) or apt-get install poppler-utils (Linux)
+# Note: spaCy is not compatible with Python 3.14 yet
+# This project uses simple keyword matching for skill extraction instead
