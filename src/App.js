@@ -9,29 +9,32 @@ import Appoinments from "./Pages/Appoinments";
 import SimilarJobs from "./Pages/SimilarJobs";
 import Quiz from "./Pages/Quiz.js";
 import Background from "./Components/Background";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
   return (
-    <div className="App text-white selection:bg-purple-500/30">
-      <Background />
-      {window.location.pathname != "/auth/signin" &&
-        <Header />
-      }
-      <div className="relative z-10 transition-all duration-500">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/auth">
-            <Route path="signup" element={<RegisterCard />} />
-            <Route path="signin" element={<LoginCard />} />
-          </Route>
-          <Route path="parse" element={<ResumeParse />} />
-          <Route path="jobs" element={<JobSearch />} />
-          <Route path="appoinments" element={<Appoinments />} />
-          <Route path="similar-jobs" element={<SimilarJobs />} />
-          <Route path="quiz" element={<Quiz />} />
-        </Routes>
+    <AuthProvider>
+      <div className="App text-white selection:bg-purple-500/30">
+        <Background />
+        {window.location.pathname !== "/auth/signin" && window.location.pathname !== "/auth/signup" &&
+          <Header />
+        }
+        <div className="relative z-10 transition-all duration-500">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/auth">
+              <Route path="signup" element={<RegisterCard />} />
+              <Route path="signin" element={<LoginCard />} />
+            </Route>
+            <Route path="parse" element={<ResumeParse />} />
+            <Route path="jobs" element={<JobSearch />} />
+            <Route path="appoinments" element={<Appoinments />} />
+            <Route path="similar-jobs" element={<SimilarJobs />} />
+            <Route path="quiz" element={<Quiz />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </AuthProvider>
   );
 }
 
