@@ -9,9 +9,10 @@ import os
 app = Flask(__name__)
 CORS(app, support_credentials=True)
 
+@app.route("/")
 @app.route("/resume")
 def index():
-    return 0
+    return jsonify({"status": "running", "message": "CareerGAIde API is active"})
 
 @app.route('/login',methods=['POST'])
 @cross_origin(supports_credentials=True)
@@ -75,6 +76,39 @@ def search_jobs():
         # TODO: Implement job search functionality
         return jsonify({'message': 'Search functionality coming soon', 'skill': skill})
 
+@app.route('/ai-job-fit', methods=['POST'])
+@cross_origin(supports_credentials=True)
+def ai_job_fit():
+    try:
+        data = request.get_json(silent=True) or request.form
+        job_title = data.get('job_title', 'Software Engineer')
+        company_name = data.get('company_name', 'Tech Company')
+        job_description = data.get('job_description', '')
+        
+        skills = data.get('skills', [])
+        if isinstance(skills, str):
+            import json
+            try:
+                skills = json.loads(skills)
+            except:
+                skills = [s.strip() for s in skills.split(',') if s.strip()]
+                
+        missing_skills = data.get('missing_skills', [])
+        if isinstance(missing_skills, str):
+            import json
+            try:
+                missing_skills = json.loads(missing_skills)
+            except:
+                missing_skills = [s.strip() for s in missing_skills.split(',') if s.strip()]
+
+        from ai_service import analyze_job_fit
+        analysis = analyze_job_fit(skills, job_title, company_name, job_description, missing_skills)
+        return jsonify(analysis)
+    except Exception as e:
+        print(f"Error in /ai-job-fit: {e}")
+        return jsonify({'error': str(e)}), 500
+
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=8000, debug=True)
+
 

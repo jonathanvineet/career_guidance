@@ -7,8 +7,12 @@ function JobSearch() {
   const [fileName, setFileName] = useState('');
   const [recommendations, setRecommendations] = useState([]);
   const [selectedJobDescription, setSelectedJobDescription] = useState('');
+  const [selectedJobTitle, setSelectedJobTitle] = useState('');
+  const [selectedCompany, setSelectedCompany] = useState('');
   const [skills, setSkills] = useState('');
-  const [missingSkills, setMissingSkills] = useState('');
+  const [missingSkills, setMissingSkills] = useState([]);
+  const [aiAnalysis, setAiAnalysis] = useState(null);
+  const [aiLoading, setAiLoading] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false); // Loading state
   const navigate = useNavigate();
@@ -26,20 +30,17 @@ function JobSearch() {
       const formData = new FormData();
       formData.append('resume', selectedFile);
 
-      // Send formData to server or perform any other action
       console.log('File selected:', selectedFile.name);
       console.log('Uploading file...');
-      setIsLoading(true); // Set loading to true when form submitted
-      // Example of sending formData to server using fetch
+      setIsLoading(true);
       fetch('http://127.0.0.1:8000/jobs', {
         method: 'POST',
         body: formData
       })
         .then(async (response) => {
           if (response.ok) {
-            const recommendations = await response.json();
-            console.log(recommendations);
-            setRecommendations(recommendations);
+            const data = await response.json();
+            setRecommendations(data);
           } else {
             toast.error('Failed to upload file.');
           }
@@ -48,49 +49,72 @@ function JobSearch() {
           console.error('Error uploading file:', error);
         })
         .finally(() => {
-          setIsLoading(false); // Set loading to false when request completed
+          setIsLoading(false);
         });
     } else {
       console.warn('No file selected.');
     }
   };
 
+  const fetchAiJobFit = (jobTitle, company, desc, skillsInJd, missing) => {
+    setAiLoading(true);
+    setAiAnalysis(null);
+    fetch('http://127.0.0.1:8000/ai-job-fit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        job_title: jobTitle,
+        company_name: company,
+        job_description: desc,
+        skills: skillsInJd,
+        missing_skills: missing
+      })
+    })
+      .then(async (res) => {
+        if (res.ok) {
+          const data = await res.json();
+          setAiAnalysis(data);
+        }
+      })
+      .catch((err) => {
+        console.error('Error fetching AI job fit:', err);
+      })
+      .finally(() => {
+        setAiLoading(false);
+      });
+  };
+
   // Function to show job details
-  const showDetails = (description, skills, missingSkills) => {
+  const showDetails = (jobTitle, company, description, skillsInJd, missing) => {
+    setSelectedJobTitle(jobTitle);
+    setSelectedCompany(company);
     setSelectedJobDescription(description);
-    setSkills(skills);
-    setMissingSkills(missingSkills);
-    console.log(skills);
+    setSkills(skillsInJd);
+    setMissingSkills(missing);
+    fetchAiJobFit(jobTitle, company, description, skillsInJd, missing);
   };
 
   // Function to close modal
   const closeModal = () => {
     setSelectedJobDescription('');
+    setAiAnalysis(null);
   };
 
   // Function to handle view similar jobs
   const handleViewSimilarJobs = () => {
     if (skills) {
       const formData = new FormData();
-      formData.append('skills', skills)
-      // Send the selected job description to the backend for further processing
+      formData.append('skills', skills);
       fetch('http://127.0.0.1:8000/similar-jobs', {
-        mode: 'no-cors',
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
         body: formData
       })
         .then(async (response) => {
-          console.log(response)
           if (response.ok) {
             const similarJobs = await response.json();
-            console.log(similarJobs);
-            navigate.push({
-              pathname: '/similar-jobs',
-              state: { similarJobs }
-            });
+            navigate('/similar-jobs', { state: { similarJobs } });
           } else {
             toast.error('Failed to fetch similar jobs.');
           }
@@ -187,7 +211,7 @@ function JobSearch() {
                         {recommendation.company_name}
                       </p>
                       <button
-                        onClick={() => showDetails(recommendation.Processed_JD, recommendation.skills_in_jd, recommendation.missing_skills)}
+                        onClick={() => showDetails(recommendation.job_title, recommendation.company_name, recommendation.Processed_JD, recommendation.skills_in_jd, recommendation.missing_skills)}
                         className="bg-white/5 hover:bg-white/10 text-white font-black py-4 px-6 rounded-xl border border-white/10 hover:border-purple-500/40 transition-all duration-300 w-full flex items-center justify-center gap-2 group/btn"
                       >
                         Explore Journey
@@ -206,25 +230,102 @@ function JobSearch() {
             <div className="relative glass border border-white/10 rounded-[2.5rem] shadow-4xl max-w-3xl w-full mx-auto max-h-[85vh] overflow-hidden animate-fadeInUp flex flex-col">
               {/* Header */}
               <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-b border-white/10 px-10 py-8 relative">
-                <h2 className="text-4xl font-black text-white leading-tight">Career Architecture</h2>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-xs font-bold uppercase tracking-widest text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">
+                    AI Career Architecture
+                  </span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
+                  {selectedJobTitle || 'Career Journey'}
+                </h2>
+                {selectedCompany && (
+                  <p className="text-white/50 font-bold mt-1 text-sm">{selectedCompany}</p>
+                )}
                 <div className="absolute top-8 right-8 cursor-pointer text-white/40 hover:text-white transition-colors" onClick={closeModal}>
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="px-10 py-10 overflow-y-auto custom-scrollbar flex-grow bg-[#0f172a]/50">
-                <div className="mb-10">
+              <div className="px-10 py-8 overflow-y-auto custom-scrollbar flex-grow bg-[#0f172a]/50 flex flex-col gap-8">
+                {/* Groq AI Career Coach Section */}
+                <div className="rounded-3xl p-6 bg-gradient-to-br from-purple-900/30 via-slate-900/60 to-pink-900/20 border border-purple-500/30 shadow-2xl relative overflow-hidden">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-2xl">⚡</span>
+                      <h3 className="text-lg font-black text-white tracking-tight">AI Coach Fit Assessment</h3>
+                    </div>
+                    {aiAnalysis?.match_score && (
+                      <div className="flex items-center gap-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/40 px-4 py-1.5 rounded-full">
+                        <span className="text-xl font-black text-purple-300">{aiAnalysis.match_score}%</span>
+                        <span className="text-xs uppercase font-extrabold text-white/70 tracking-wider">Match</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {aiLoading ? (
+                    <div className="py-8 flex flex-col items-center justify-center gap-3">
+                      <div className="w-10 h-10 border-3 border-purple-500/20 border-t-purple-400 rounded-full animate-spin"></div>
+                      <p className="text-sm font-bold text-purple-300/80 animate-pulse">Computing Groq AI career intelligence & gap analysis...</p>
+                    </div>
+                  ) : aiAnalysis ? (
+                    <div className="space-y-4 text-sm">
+                      {aiAnalysis.summary && (
+                        <p className="text-white/80 leading-relaxed font-medium bg-black/20 p-4 rounded-2xl border border-white/5">
+                          {aiAnalysis.summary}
+                        </p>
+                      )}
+
+                      {aiAnalysis.strengths && aiAnalysis.strengths.length > 0 && (
+                        <div>
+                          <h4 className="text-xs font-black text-green-400 uppercase tracking-wider mb-2">⭐ Your Key Strengths</h4>
+                          <ul className="space-y-1.5 pl-2 text-white/70">
+                            {aiAnalysis.strengths.map((str, idx) => (
+                              <li key={idx} className="flex items-start gap-2">
+                                <span className="text-green-400">✓</span>
+                                <span>{str}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {aiAnalysis.action_plan && aiAnalysis.action_plan.length > 0 && (
+                        <div>
+                          <h4 className="text-xs font-black text-pink-400 uppercase tracking-wider mb-2">🎯 Recommended Upskilling Roadmap</h4>
+                          <ul className="space-y-1.5 pl-2 text-white/70">
+                            {aiAnalysis.action_plan.map((step, idx) => (
+                              <li key={idx} className="flex items-start gap-2">
+                                <span className="text-pink-400 font-bold">→</span>
+                                <span>{step}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {aiAnalysis.interview_tip && (
+                        <div className="bg-purple-500/10 border border-purple-500/20 p-3.5 rounded-2xl">
+                          <h4 className="text-xs font-black text-purple-300 uppercase tracking-wider mb-1">💡 Pro Interview Tip</h4>
+                          <p className="text-white/75 text-xs leading-relaxed">{aiAnalysis.interview_tip}</p>
+                        </div>
+                      )}
+                    </div>
+                  ) : null}
+                </div>
+
+                {/* Job Scope & Missing Skills */}
+                <div>
                   <h3 className="text-sm font-black text-purple-400 uppercase tracking-[0.2em] mb-4">Core Competencies & Scope</h3>
-                  <p className="text-white/70 leading-relaxed text-lg font-medium">{selectedJobDescription}</p>
+                  <p className="text-white/70 leading-relaxed text-base font-medium">{selectedJobDescription}</p>
                 </div>
 
                 {missingSkills && missingSkills.length > 0 && (
                   <div>
                     <h3 className="text-sm font-black text-pink-400 uppercase tracking-[0.2em] mb-4">Identified Growth Areas</h3>
-                    <div className="flex flex-wrap gap-3">
+                    <div className="flex flex-wrap gap-2.5">
                       {missingSkills.map((skill, index) => (
-                        <span key={index} className="bg-white/5 border border-white/10 text-white font-bold px-5 py-2.5 rounded-xl text-sm backdrop-blur-md shadow-lg group hover:border-pink-500/50 transition-all duration-300">
+                        <span key={index} className="bg-white/5 border border-white/10 text-white font-bold px-4 py-2 rounded-xl text-xs backdrop-blur-md shadow-lg group hover:border-pink-500/50 transition-all duration-300">
                           {skill}
                         </span>
                       ))}
@@ -234,16 +335,16 @@ function JobSearch() {
               </div>
 
               {/* Footer */}
-              <div className="bg-white/5 backdrop-blur-3xl px-10 py-8 flex flex-col md:flex-row gap-4 justify-end border-t border-white/10">
+              <div className="bg-white/5 backdrop-blur-3xl px-10 py-6 flex flex-col md:flex-row gap-4 justify-end border-t border-white/10">
                 <button
                   onClick={closeModal}
-                  className="bg-white/5 text-white font-black py-4 px-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                  className="bg-white/5 text-white font-black py-3.5 px-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
                 >
-                  Retreat
+                  Close
                 </button>
                 <button
                   onClick={handleViewSimilarJobs}
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black py-4 px-10 rounded-2xl hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transform hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-2"
+                  className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black py-3.5 px-8 rounded-2xl hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transform hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   Discover Parallel Paths
                   <span>→</span>

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-function SimilarJobs({ similarJobs }) {
+function SimilarJobs({ similarJobs = [] }) {
   return (
     <div className="container mx-auto max-w-4xl px-4 py-8">
       <h1 className="text-3xl font-bold text-center mb-8">Similar Jobs</h1>

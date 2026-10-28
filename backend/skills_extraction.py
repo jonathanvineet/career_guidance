@@ -159,8 +159,16 @@ def skills_extractor(file_name):
         else:
             resume_text = extract_text_from_image(file_name)
         
-        # Extract skills from resume text
-        skills = list(extract_skills(resume_text))
+        # Extract baseline skills from resume text
+        baseline_skills = list(extract_skills(resume_text))
+        
+        # Augment with Groq AI skill intelligence
+        try:
+            from ai_service import extract_skills_with_ai
+            skills = extract_skills_with_ai(resume_text, baseline_skills)
+        except Exception as ai_err:
+            print(f"AI skill extraction notice: {ai_err}")
+            skills = baseline_skills
         
         print(f"Extracted skills: {skills}")
         return skills if skills else []

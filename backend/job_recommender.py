@@ -22,8 +22,8 @@ def job_recommendation(skills_list):
     # Calculate cosine similarity between user skills and all job descriptions
     cos_similarities = cosine_similarity(user_skills_tfidf, job_tfidf).flatten()
     
-    # Get the indices of top 10 job recommendations with highest similarity scores
-    top_job_indices = np.argsort(cos_similarities)
+    # Get the indices of top job recommendations with highest similarity scores (descending)
+    top_job_indices = np.argsort(cos_similarities)[::-1]
     
     # Get the top 10 job recommendations
     top_jobs_df = jobs_df.iloc[top_job_indices].copy()
@@ -55,8 +55,8 @@ def job_recommendation_from_job(skills_list):
     # Calculate cosine similarity between user skills and all job descriptions
     cos_similarities = cosine_similarity(user_skills_tfidf, job_tfidf).flatten()
     
-    # Get the indices of top 10 job recommendations with highest similarity scores
-    top_job_indices = np.argsort(cos_similarities)
+    # Get the indices of top job recommendations with highest similarity scores (descending)
+    top_job_indices = np.argsort(cos_similarities)[::-1]
     
     # Get the top 10 job recommendations
     top_jobs_df = jobs_df.iloc[top_job_indices].copy()

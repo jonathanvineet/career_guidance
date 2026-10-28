@@ -107,6 +107,9 @@ function ResumeParse() {
             <div className="mt-16 animate-fadeIn relative z-10 text-left">
               <div className="flex items-center gap-4 mb-8">
                 <h2 className="text-2xl font-black text-white tracking-tight">Decoded Capabilities</h2>
+                <span className="text-xs font-bold uppercase tracking-wider bg-purple-500/10 border border-purple-500/30 text-purple-300 px-3 py-1 rounded-full">
+                  ⚡ AI Enhanced
+                </span>
                 <div className="h-px flex-grow bg-white/10"></div>
               </div>
               <div className="flex flex-wrap gap-3">
