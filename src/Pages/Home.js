@@ -124,7 +124,7 @@ function FieldStage() {
     );
     const tooltip = hover && (
         <div
-            className="pointer-events-none absolute z-10 max-w-[280px] bg-[var(--ink)] px-3 py-2 text-[var(--paper)]"
+            className="pointer-events-none absolute z-10 max-w-[280px] rounded-[var(--r-sm)] bg-[var(--ink)] px-4 py-3 text-[var(--paper)]"
             style={{ left: hover.x + 14, top: hover.y + 14 }}
             role="status"
         >
@@ -232,7 +232,7 @@ function ResumeFragment() {
     const hl = (t) => <span className="hl mark">{t}</span>;
     return (
         <div ref={ref} data-ui className="grid gap-4 sm:grid-cols-[1.35fr_1fr]">
-            <div className="bg-[#faf8f3] p-[clamp(20px,3vw,40px)] text-[16px] leading-[1.6]">
+            <div className="rounded-[var(--r-lg)] bg-[#faf8f3] p-[clamp(20px,3vw,40px)] text-[16px] leading-[1.6]">
                 <p className="text-[26px] leading-tight tracking-[-0.01em]">Asha Menon</p>
                 <p className="text-[var(--ink-2)]">Junior data analyst · Kochi</p>
                 <p className="mt-6 font-medium">Experience</p>
@@ -245,7 +245,7 @@ function ResumeFragment() {
                 <p className="mt-6 font-medium">Projects</p>
                 <p className="mt-1">Rainfall and crop yields, a {hl("data visualization")} for a district office.</p>
             </div>
-            <div className="found flex flex-col justify-end bg-[var(--paper-2)] p-[clamp(20px,3vw,32px)]">
+            <div className="found flex flex-col justify-end rounded-[var(--r-lg)] bg-[var(--paper-2)] p-[clamp(20px,3vw,32px)]">
                 <p className="text-[17px]">Skills found</p>
                 <div className="mt-3 flex flex-wrap gap-[6px]">
                     {RESUME_SKILLS.map((s) => (
@@ -266,7 +266,7 @@ function GapFragment() {
     const missing = missingFor(job, SAMPLE_PROFILE).filter((k) => k.length > 2);
     const have = job.k.filter((k) => SAMPLE_PROFILE.includes(k));
     return (
-        <div data-ui className="bg-[var(--ink)] p-[clamp(20px,3vw,40px)] text-[var(--paper)]">
+        <div data-ui className="rounded-[var(--r-lg)] bg-[var(--ink)] p-[clamp(20px,3vw,40px)] text-[var(--paper)]">
             <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
                 <p className="text-[clamp(26px,2.4vw,34px)] leading-tight tracking-[-0.015em]">{job.t}</p>
                 <p className="data tnum !text-[var(--sun)]">match {fmt(scores[best])}</p>
@@ -300,7 +300,7 @@ function PersonalityFragment() {
     const answers = ["Yep, that is me", "I have no idea", "Nah, that can't be me"];
     return (
         <div data-ui className="grid gap-4 sm:grid-cols-2">
-            <div className="bg-[var(--paper-2)] p-[clamp(20px,3vw,36px)]">
+            <div className="rounded-[var(--r-lg)] bg-[var(--paper-2)] p-[clamp(20px,3vw,36px)]">
                 <p className="data">Question 3 of 40</p>
                 <p className="mt-3 text-[clamp(24px,2.2vw,32px)] leading-[1.15] tracking-[-0.015em]">I like to try things out myself.</p>
                 <div className="mt-6 flex flex-col gap-2" role="group" aria-label="Sample answers">
@@ -310,7 +310,7 @@ function PersonalityFragment() {
                             type="button"
                             onClick={() => setPick(i)}
                             aria-pressed={pick === i}
-                            className="min-h-[48px] px-4 text-left text-[18px] transition-colors duration-200"
+                            className="min-h-[48px] rounded-[var(--r-pill)] px-5 text-left text-[18px] transition-[background-color,transform] duration-200 hover:-translate-y-[1px] active:scale-[0.99]"
                             style={{ background: pick === i ? "var(--sun)" : "var(--paper)" }}
                         >
                             {a}
@@ -318,7 +318,7 @@ function PersonalityFragment() {
                     ))}
                 </div>
             </div>
-            <div className="flex flex-col justify-between bg-[var(--sun)] p-[clamp(20px,3vw,36px)]">
+            <div className="flex flex-col justify-between rounded-[var(--r-lg)] bg-[var(--sun)] p-[clamp(20px,3vw,36px)]">
                 <p className="data !text-[var(--ink)]">A result</p>
                 <div>
                     <p className="display text-[clamp(64px,7vw,112px)]">INTJ</p>
@@ -459,7 +459,7 @@ function Method() {
     }, []);
 
     return (
-        <section ref={wrap} aria-labelledby="method-title" className="relative bg-[var(--paper-2)] lg:h-[280vh]">
+        <section ref={wrap} aria-labelledby="method-title" className="relative mx-[clamp(8px,1vw,16px)] rounded-[var(--r-xl)] bg-[var(--paper-2)] lg:h-[280vh]">
             <div className="lg:sticky lg:top-0 lg:flex lg:h-[100svh] lg:flex-col lg:overflow-hidden">
                 <div className="frame pb-10 pt-[clamp(96px,12vh,140px)] lg:pb-0">
                     <h2 id="method-title" className="display h-lg">
@@ -472,7 +472,7 @@ function Method() {
                             <article
                                 key={s.word}
                                 className={`grid shrink-0 items-center gap-8 px-[var(--gutter)] py-14 lg:h-full lg:w-[78vw] lg:grid-cols-[1fr_1.05fr] lg:gap-[4vw] lg:px-[3vw] lg:py-0 ${
-                                    i === STEPS.length - 1 ? "bg-[var(--sun)]" : ""
+                                    i === STEPS.length - 1 ? "rounded-[var(--r-xl)] bg-[var(--sun)]" : ""
                                 }`}
                             >
                                 <div>
@@ -483,7 +483,7 @@ function Method() {
                                     <p className="data mt-6 !text-[var(--ink)]">{s.fact}</p>
                                 </div>
                                 <figure>
-                                    <div className="overflow-hidden">
+                                    <div className="overflow-hidden rounded-[var(--r-md)]">
                                         <img
                                             data-step-img
                                             src={s.img}
@@ -523,7 +523,7 @@ function Counsellor() {
                     ["4", "var(--sdg4)", "Quality Education", "Target 4.4, skills for decent jobs"],
                     ["8", "var(--sdg8)", "Decent Work and Economic Growth", "Target 8.6, youth in work and training"],
                 ].map(([n, c, t, d]) => (
-                    <div data-reveal key={n} className="grid grid-cols-[88px_1fr] items-stretch bg-[var(--paper-2)]">
+                    <div data-reveal key={n} className="grid grid-cols-[88px_1fr] items-stretch overflow-hidden rounded-[var(--r-md)] bg-[var(--paper-2)]">
                         <div className="grid place-items-center text-[var(--paper)]" style={{ background: c }}>
                             <span className="text-center leading-none">
                                 <span className="block text-[44px] font-semibold">{n}</span>

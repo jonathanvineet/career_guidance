@@ -19,7 +19,7 @@ const credits = [
 function Footer() {
     const ref = useReveal();
     return (
-        <footer ref={ref} className="overflow-hidden bg-[var(--ink)] pt-24 text-[var(--paper)] sm:pt-32">
+        <footer ref={ref} className="mx-[clamp(8px,1vw,16px)] overflow-hidden rounded-t-[var(--r-xl)] bg-[var(--ink)] pt-24 text-[var(--paper)] sm:pt-32">
             <div className="frame">
                 <div className="grid gap-12 md:grid-cols-[1.2fr_1fr]">
                     <p data-reveal className="max-w-[22ch] text-[clamp(24px,2.4vw,34px)] leading-[1.1] tracking-[-0.02em]">

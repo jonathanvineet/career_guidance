@@ -1,0 +1,2731 @@
+{
+ "url": "http://localhost:3123/",
+ "at": "2026-10-28T13:02:37.554Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 11,
+   "filled": [
+    0.93,
+    1,
+    0.81,
+    0.83,
+    0.38,
+    0.41,
+    0.82,
+    0.95,
+    0.93,
+    0.43,
+    0.87
+   ],
+   "motion": {
+    "elements": 75,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 75,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 9584,
+     "screens": 10.6,
+     "words": 566,
+     "img": 4,
+     "video": 0,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 3,
+     "pictureSamples": [
+      "read-desk.jpg",
+      "extract-card.jpg",
+      "weigh-hollerith.jpg",
+      "rank-sorter.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Your skills, matched.",
+     "words": 3,
+     "chars": 21,
+     "lines": 2,
+     "size": 123.8,
+     "vw": 8.6,
+     "font": "Newsreader",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 0.92,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.39,
+     "top": 216,
+     "mixedFonts": [
+      "Newsreader",
+      "Newsreader italic"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Your skills, matched.",
+     "words": 3,
+     "lines": 2,
+     "size": 123.8,
+     "font": "Newsreader"
+    },
+    "headings": [
+     {
+      "text": "Your skills, matched.",
+      "words": 3,
+      "chars": 21,
+      "lines": 2,
+      "size": 123.8,
+      "vw": 8.6,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.39,
+      "top": 216,
+      "mixedFonts": [
+       "Newsreader",
+       "Newsreader italic"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Starts from your resume",
+      "words": 4,
+      "chars": 23,
+      "lines": 2,
+      "size": 63.4,
+      "vw": 4.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 3871,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Shows what you are missing",
+      "words": 5,
+      "chars": 26,
+      "lines": 2,
+      "size": 63.4,
+      "vw": 4.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.38,
+      "top": 4438,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Data Scientist",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.13,
+      "top": 4476,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Skills and personality together",
+      "words": 4,
+      "chars": 31,
+      "lines": 2,
+      "size": 63.4,
+      "vw": 4.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 4985,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "I like to try things out myself.",
+      "words": 7,
+      "chars": 32,
+      "lines": 2,
+      "size": 31.7,
+      "vw": 2.2,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.015,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.19,
+      "top": 5037,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "INTJ",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 100.8,
+      "vw": 7,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.19,
+      "top": 5110,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "How a match is made",
+      "words": 5,
+      "chars": 19,
+      "lines": 1,
+      "size": 92.2,
+      "vw": 6.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 5638,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Read.",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 129.6,
+      "vw": 9,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.33,
+      "top": 5936,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Extract.",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 129.6,
+      "vw": 9,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.33,
+      "top": 5964,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Weigh.",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 129.6,
+      "vw": 9,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.33,
+      "top": 5971,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Rank.",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 129.6,
+      "vw": 9,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.33,
+      "top": 5971,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Talk it through with a counsellor",
+      "words": 6,
+      "chars": 33,
+      "lines": 2,
+      "size": 92.2,
+      "vw": 6.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.48,
+      "top": 8250,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "4",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 44,
+      "vw": 3.1,
+      "font": "Newsreader",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.02,
+      "top": 8434,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "8",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 44,
+      "vw": 3.1,
+      "font": "Newsreader",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.02,
+      "top": 8541,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Read your resume, rank real jobs, and learn the skills between them.",
+      "words": 12,
+      "chars": 68,
+      "lines": 3,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 8949,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "CareerGAIde",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 280.8,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.98,
+      "top": 9359,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 17,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 5,
+     "centered": 3,
+     "medianWords": 2,
+     "mixedFontHeadings": 1
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Newsreader",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      11,
+      15,
+      16,
+      17,
+      19,
+      20,
+      21,
+      22,
+      25,
+      26,
+      34,
+      44,
+      63,
+      92,
+      124,
+      130,
+      281
+     ],
+     "sizeCount": 17,
+     "notLoaded": [],
+     "body": {
+      "font": "Newsreader",
+      "size": 20.2,
+      "leading": 1.55,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 13.9
+     },
+     "measureChars": 48,
+     "max": {
+      "size": 280.8,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "text": "CareerGAIde"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#efebe3",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.27,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#e5e0d4",
+       "top": 5530,
+       "hsl": {
+        "h": 42,
+        "s": 0.25,
+        "l": 0.86
+       }
+      },
+      {
+       "color": "#f3d23c",
+       "top": 5722,
+       "hsl": {
+        "h": 49,
+        "s": 0.88,
+        "l": 0.59
+       }
+      },
+      {
+       "color": "#1b1e2b",
+       "top": 8821,
+       "hsl": {
+        "h": 229,
+        "s": 0.23,
+        "l": 0.14
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1b1e2b",
+       "share": 0.71
+      },
+      {
+       "color": "#efebe3",
+       "share": 0.1
+      },
+      {
+       "color": "#d9d3c4",
+       "share": 0.1
+      },
+      {
+       "color": "#555867",
+       "share": 0.08
+      },
+      {
+       "color": "#8a8b92",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#f3d23c",
+      "hsl": {
+       "h": 49,
+       "s": 0.88,
+       "l": 0.59
+      },
+      "fg": "#1b1e2b"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 18,
+     "inHero": 11,
+     "radius": "pill",
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Sign in",
+      "Match my resume →"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 10,
+     "boxRadius": 28,
+     "squareMedia": 1,
+     "roundedMedia": 4,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 1
+     }
+    ],
+    "nav": {
+     "links": 6,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "newsreader"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 9584,
+    "margins": {
+     "left": 58,
+     "right": 72
+    },
+    "sections": [
+     {
+      "sel": "section.relative.h-[400svh]",
+      "tag": "section",
+      "top": 0,
+      "height": 3600,
+      "words": 30,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Your skills,",
+       "size": 124,
+       "tag": "h1"
+      },
+      "left": 58,
+      "right": 821,
+      "textLeft": 58,
+      "textRight": 821,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section.grid.items-center",
+      "tag": "section",
+      "top": 3800,
+      "height": 436,
+      "words": 92,
+      "media": 0,
+      "middle": 207,
+      "heading": {
+       "text": "Starts from your resume",
+       "size": 63,
+       "tag": "h2"
+      },
+      "left": 58,
+      "right": 128,
+      "textLeft": 58,
+      "textRight": 128,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.grid.items-center",
+      "tag": "section",
+      "top": 4436,
+      "height": 330,
+      "words": 53,
+      "media": 0,
+      "middle": 219,
+      "heading": {
+       "text": "Shows what you are missing",
+       "size": 63,
+       "tag": "h2"
+      },
+      "left": 98,
+      "right": 69,
+      "textLeft": 98,
+      "textRight": 69,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.grid.items-center",
+      "tag": "section",
+      "top": 4966,
+      "height": 363,
+      "words": 68,
+      "media": 0,
+      "middle": 101,
+      "heading": {
+       "text": "INTJ",
+       "size": 101,
+       "tag": "p"
+      },
+      "left": 58,
+      "right": 113,
+      "textLeft": 58,
+      "textRight": 113,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.relative.mx-[clamp(8px,1vw,16px)]",
+      "tag": "section",
+      "top": 5530,
+      "height": 2520,
+      "words": 75,
+      "media": 4,
+      "middle": 2463,
+      "heading": {
+       "text": "Read",
+       "size": 130,
+       "tag": "h3"
+      },
+      "left": 72,
+      "right": 0,
+      "textLeft": 72,
+      "textRight": 72,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section.frame.grid",
+      "tag": "section",
+      "top": 8050,
+      "height": 771,
+      "words": 63,
+      "media": 0,
+      "middle": 82,
+      "heading": {
+       "text": "Talk it through with a counsellor",
+       "size": 92,
+       "tag": "h2"
+      },
+      "left": 58,
+      "right": 215,
+      "textLeft": 58,
+      "textRight": 215,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.mx-[clamp(8px,1vw,16px)].overflow-hidden",
+      "tag": "footer",
+      "top": 8821,
+      "height": 763,
+      "words": 76,
+      "media": 0,
+      "middle": 60,
+      "heading": {
+       "text": "Read your resume, rank real jobs, and learn the sk",
+       "size": 34,
+       "tag": "p"
+      },
+      "left": 72,
+      "right": 202,
+      "textLeft": 14,
+      "textRight": 14,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 8632,
+      "height": 316
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Your skills, matched.",
+      "size": 124,
+      "top": 216,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 58,
+      "n": 9
+     },
+     {
+      "x": 72,
+      "n": 3
+     },
+     {
+      "x": 1197,
+      "n": 3
+     },
+     {
+      "x": 834,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 17,
+    "bodySize": 20,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.9,
+    1,
+    0.81,
+    0.84,
+    0.37,
+    0.43,
+    0.76,
+    0.94,
+    0.92,
+    0.93,
+    0.5,
+    0.85
+   ],
+   "motion": {
+    "elements": 66,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 66,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 11652,
+     "screens": 11.4,
+     "words": 560,
+     "img": 4,
+     "video": 0,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 3,
+     "pictureSamples": [
+      "read-desk.jpg",
+      "extract-card.jpg",
+      "weigh-hollerith.jpg",
+      "rank-sorter.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Your skills, matched.",
+     "words": 3,
+     "chars": 21,
+     "lines": 2,
+     "size": 66,
+     "vw": 8.6,
+     "font": "Newsreader",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 0.92,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.39,
+     "top": 348,
+     "mixedFonts": [
+      "Newsreader",
+      "Newsreader italic"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Your skills, matched.",
+     "words": 3,
+     "lines": 2,
+     "size": 66,
+     "font": "Newsreader"
+    },
+    "headings": [
+     {
+      "text": "CareerGAIde",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Newsreader",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 15,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Your skills, matched.",
+      "words": 3,
+      "chars": 21,
+      "lines": 2,
+      "size": 66,
+      "vw": 8.6,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.39,
+      "top": 348,
+      "mixedFonts": [
+       "Newsreader",
+       "Newsreader italic"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Starts from your resume",
+      "words": 4,
+      "chars": 23,
+      "lines": 1,
+      "size": 38,
+      "vw": 4.9,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4216,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Asha Menon",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.46,
+      "top": 4480,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Shows what you are missing",
+      "words": 5,
+      "chars": 26,
+      "lines": 1,
+      "size": 38,
+      "vw": 4.9,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4980,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Data Scientist",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 5271,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Skills and personality together",
+      "words": 4,
+      "chars": 31,
+      "lines": 1,
+      "size": 38,
+      "vw": 4.9,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5654,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "INTJ",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 64,
+      "vw": 8.3,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.39,
+      "top": 6043,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "How a match is made",
+      "words": 5,
+      "chars": 19,
+      "lines": 1,
+      "size": 49.2,
+      "vw": 6.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 6458,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Read.",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 69.1,
+      "vw": 9,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 6599,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Extract.",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 69.1,
+      "vw": 9,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 7510,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Weigh.",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 69.1,
+      "vw": 9,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 8395,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Rank.",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 69.1,
+      "vw": 9,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 9306,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Talk it through with a counsellor",
+      "words": 6,
+      "chars": 33,
+      "lines": 2,
+      "size": 49.2,
+      "vw": 6.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.54,
+      "top": 10281,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "4",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 44,
+      "vw": 5.7,
+      "font": "Newsreader",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.04,
+      "top": 10673,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "8",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 44,
+      "vw": 5.7,
+      "font": "Newsreader",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.04,
+      "top": 10780,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "CareerGAIde",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 149.8,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.98,
+      "top": 11532,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 17,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 4,
+     "centered": 3,
+     "medianWords": 1,
+     "mixedFontHeadings": 1
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Newsreader",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      11,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      24,
+      26,
+      38,
+      44,
+      49,
+      66,
+      69,
+      150
+     ],
+     "sizeCount": 15,
+     "notLoaded": [],
+     "body": {
+      "font": "Newsreader",
+      "size": 19,
+      "leading": 1.42,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 48,
+     "max": {
+      "size": 149.8,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "text": "CareerGAIde"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#efebe3",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.27,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#e5e0d4",
+       "top": 6335,
+       "hsl": {
+        "h": 42,
+        "s": 0.25,
+        "l": 0.86
+       }
+      },
+      {
+       "color": "#f3d23c",
+       "top": 9250,
+       "hsl": {
+        "h": 49,
+        "s": 0.88,
+        "l": 0.59
+       }
+      },
+      {
+       "color": "#1b1e2b",
+       "top": 10979,
+       "hsl": {
+        "h": 229,
+        "s": 0.23,
+        "l": 0.14
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1b1e2b",
+       "share": 0.7
+      },
+      {
+       "color": "#efebe3",
+       "share": 0.1
+      },
+      {
+       "color": "#d9d3c4",
+       "share": 0.1
+      },
+      {
+       "color": "#555867",
+       "share": 0.08
+      },
+      {
+       "color": "#8a8b92",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#f3d23c",
+      "hsl": {
+       "h": 49,
+       "s": 0.88,
+       "l": 0.59
+      },
+      "fg": "#1b1e2b"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 19,
+     "inHero": 12,
+     "radius": "pill",
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Sign in",
+      "Match my resume →"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 10,
+     "boxRadius": 28,
+     "squareMedia": 1,
+     "roundedMedia": 4,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 1
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "newsreader"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 11652,
+    "margins": {
+     "left": 31,
+     "right": 39
+    },
+    "sections": [
+     {
+      "sel": "section.relative.h-[400svh]",
+      "tag": "section",
+      "top": 0,
+      "height": 4096,
+      "words": 30,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Your skills,",
+       "size": 66,
+       "tag": "h1"
+      },
+      "left": 31,
+      "right": 303,
+      "textLeft": 31,
+      "textRight": 303,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section.grid.items-center",
+      "tag": "section",
+      "top": 4216,
+      "height": 644,
+      "words": 92,
+      "media": 0,
+      "middle": 43,
+      "heading": {
+       "text": "Starts from your resume",
+       "size": 38,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 108,
+      "textLeft": 31,
+      "textRight": 108,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.grid.items-center",
+      "tag": "section",
+      "top": 4980,
+      "height": 555,
+      "words": 56,
+      "media": 0,
+      "middle": 180,
+      "heading": {
+       "text": "Shows what you are missing",
+       "size": 38,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 54,
+      "textLeft": 31,
+      "textRight": 54,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.grid.items-center",
+      "tag": "section",
+      "top": 5654,
+      "height": 561,
+      "words": 68,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "INTJ",
+       "size": 64,
+       "tag": "p"
+      },
+      "left": 31,
+      "right": 75,
+      "textLeft": 31,
+      "textRight": 75,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.relative.mx-[clamp(8px,1vw,16px)]",
+      "tag": "section",
+      "top": 6335,
+      "height": 3826,
+      "words": 151,
+      "media": 4,
+      "middle": 0,
+      "heading": {
+       "text": "Read",
+       "size": 69,
+       "tag": "h3"
+      },
+      "left": 39,
+      "right": 39,
+      "textLeft": 39,
+      "textRight": 224,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.frame.grid",
+      "tag": "section",
+      "top": 10161,
+      "height": 819,
+      "words": 63,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Talk it through with a counsellor",
+       "size": 49,
+       "tag": "h2"
+      },
+      "left": 31,
+      "right": 302,
+      "textLeft": 31,
+      "textRight": 302,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.mx-[clamp(8px,1vw,16px)].overflow-hidden",
+      "tag": "footer",
+      "top": 10979,
+      "height": 672,
+      "words": 76,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 39,
+      "right": 50,
+      "textLeft": 8,
+      "textRight": 8,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Your skills, matched.",
+      "size": 66,
+      "top": 348,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 31,
+      "n": 21
+     }
+    ],
+    "leftBlocks": 21,
+    "bodySize": 19,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 12,
+   "filled": [
+    0.88,
+    1,
+    0.94,
+    0.93,
+    0.37,
+    0.64,
+    0.62,
+    0.49,
+    0.82,
+    0.91,
+    0.94,
+    0.7
+   ],
+   "motion": {
+    "elements": 66,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 66,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 11586,
+     "screens": 13.7,
+     "words": 660,
+     "img": 4,
+     "video": 0,
+     "canvas": 1,
+     "svg": 0,
+     "sections": 7,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 3,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 3,
+     "pictureSamples": [
+      "read-desk.jpg",
+      "extract-card.jpg",
+      "weigh-hollerith.jpg",
+      "rank-sorter.jpg"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Your skills, matched.",
+     "words": 3,
+     "chars": 21,
+     "lines": 2,
+     "size": 60,
+     "vw": 15.4,
+     "font": "Newsreader",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 0.92,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.68,
+     "top": 135,
+     "mixedFonts": [
+      "Newsreader",
+      "Newsreader italic"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Your skills, matched.",
+     "words": 3,
+     "lines": 2,
+     "size": 60,
+     "font": "Newsreader"
+    },
+    "headings": [
+     {
+      "text": "CareerGAIde",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Newsreader",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.37,
+      "top": 15,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Your skills, matched.",
+      "words": 3,
+      "chars": 21,
+      "lines": 2,
+      "size": 60,
+      "vw": 15.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.68,
+      "top": 135,
+      "mixedFonts": [
+       "Newsreader",
+       "Newsreader italic"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Top ten distinct titles",
+      "words": 4,
+      "chars": 23,
+      "lines": 1,
+      "size": 32,
+      "vw": 8.2,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 3440,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Starts from your resume",
+      "words": 4,
+      "chars": 23,
+      "lines": 2,
+      "size": 38,
+      "vw": 9.7,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4238,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Asha Menon",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.01,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.82,
+      "top": 4564,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Shows what you are missing",
+      "words": 5,
+      "chars": 26,
+      "lines": 2,
+      "size": 38,
+      "vw": 9.7,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 5257,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Data Scientist",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.37,
+      "top": 5583,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Skills and personality together",
+      "words": 4,
+      "chars": 31,
+      "lines": 2,
+      "size": 38,
+      "vw": 9.7,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.025,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 6057,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "I like to try things out myself.",
+      "words": 7,
+      "chars": 32,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.015,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.82,
+      "top": 6418,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "INTJ",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.82,
+      "top": 6708,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "How a match is made",
+      "words": 5,
+      "chars": 19,
+      "lines": 2,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 7099,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Read.",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 7275,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Extract.",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 7920,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Weigh.",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 8588,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Rank.",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 64,
+      "vw": 16.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 9233,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Talk it through with a counsellor",
+      "words": 6,
+      "chars": 33,
+      "lines": 2,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 9942,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "4",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Newsreader",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 10375,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "8",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Newsreader",
+      "weight": 600,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 10507,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Read your resume, rank real jobs, and learn the skills between them.",
+      "words": 12,
+      "chars": 68,
+      "lines": 3,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 10828,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "CareerGAIde",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 76.1,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.96,
+      "top": 11549,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 20,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 6,
+     "centered": 3,
+     "medianWords": 2,
+     "mixedFontHeadings": 1
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Newsreader",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      11,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21,
+      24,
+      26,
+      32,
+      38,
+      44,
+      60,
+      64,
+      76
+     ],
+     "sizeCount": 15,
+     "notLoaded": [],
+     "body": {
+      "font": "Newsreader",
+      "size": 19,
+      "leading": 1.42,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 40,
+     "max": {
+      "size": 76.1,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "text": "CareerGAIde"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.01,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#efebe3",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.27,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#faf8f3",
+       "top": 4544,
+       "hsl": {
+        "h": 43,
+        "s": 0.41,
+        "l": 0.97
+       }
+      },
+      {
+       "color": "#1b1e2b",
+       "top": 5563,
+       "hsl": {
+        "h": 229,
+        "s": 0.23,
+        "l": 0.14
+       }
+      },
+      {
+       "color": "#e5e0d4",
+       "top": 6363,
+       "hsl": {
+        "h": 42,
+        "s": 0.25,
+        "l": 0.86
+       }
+      },
+      {
+       "color": "#f3d23c",
+       "top": 9177,
+       "hsl": {
+        "h": 49,
+        "s": 0.88,
+        "l": 0.59
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#1b1e2b",
+       "share": 0.69
+      },
+      {
+       "color": "#555867",
+       "share": 0.13
+      },
+      {
+       "color": "#efebe3",
+       "share": 0.09
+      },
+      {
+       "color": "#d9d3c4",
+       "share": 0.08
+      },
+      {
+       "color": "#8a8b92",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#f3d23c",
+      "hsl": {
+       "h": 49,
+       "s": 0.88,
+       "l": 0.59
+      },
+      "fg": "#1b1e2b"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 19,
+     "inHero": 12,
+     "radius": "pill",
+     "height": 32,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Sign in",
+      "Match my resume →"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 10,
+     "boxRadius": 28,
+     "squareMedia": 1,
+     "roundedMedia": 4,
+     "mediaRadius": 20,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "canvas",
+      "ratio": 1
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "newsreader"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 11586,
+    "margins": {
+     "left": 16,
+     "right": 21
+    },
+    "sections": [
+     {
+      "sel": "section.relative.h-[400svh]",
+      "tag": "section",
+      "top": 0,
+      "height": 3376,
+      "words": 30,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Your skills,",
+       "size": 60,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 21,
+      "textLeft": 16,
+      "textRight": 21,
+      "fullBleed": true,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": true
+     },
+     {
+      "sel": "section.frame.pb-8",
+      "tag": "section",
+      "top": 3376,
+      "height": 742,
+      "words": 83,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Top ten distinct titles",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 21,
+      "textLeft": 16,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.grid.items-center",
+      "tag": "section",
+      "top": 4238,
+      "height": 899,
+      "words": 92,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Starts from your resume",
+       "size": 38,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 36,
+      "textLeft": 16,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.grid.items-center",
+      "tag": "section",
+      "top": 5257,
+      "height": 680,
+      "words": 56,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Shows what you are missing",
+       "size": 38,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 18,
+      "textLeft": 16,
+      "textRight": 18,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.grid.items-center",
+      "tag": "section",
+      "top": 6057,
+      "height": 820,
+      "words": 68,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Skills and personality together",
+       "size": 38,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 36,
+      "textLeft": 16,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.relative.mx-[clamp(8px,1vw,16px)]",
+      "tag": "section",
+      "top": 6997,
+      "height": 2824,
+      "words": 151,
+      "media": 4,
+      "middle": 0,
+      "heading": {
+       "text": "Read",
+       "size": 64,
+       "tag": "h3"
+      },
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 29,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section.frame.grid",
+      "tag": "section",
+      "top": 9822,
+      "height": 886,
+      "words": 34,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Talk it through with a counsellor",
+       "size": 44,
+       "tag": "h2"
+      },
+      "left": 16,
+      "right": 21,
+      "textLeft": 16,
+      "textRight": 21,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.mx-[clamp(8px,1vw,16px)].overflow-hidden",
+      "tag": "footer",
+      "top": 10708,
+      "height": 878,
+      "words": 0,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": null,
+      "right": null,
+      "textLeft": null,
+      "textRight": null,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Your skills, matched.",
+      "size": 60,
+      "top": 135,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 22
+     }
+    ],
+    "leftBlocks": 22,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "mixed-font-headline",
+   "width": 1440,
+   "message": "1 headline(s) switch typeface or to italic mid-line (the \"one italic serif word\" move).",
+   "fix": "Set the whole headline in one face. Emphasis comes from the words.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "palette-cream",
+   "width": 1440,
+   "message": "Yellow-cream background (page background #efebe3, text #efebe3).",
+   "fix": "Use the drawn palette. If you want warmth, take a low-chroma stone or bone, not a yellow cream.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "17 different font sizes (11, 15, 16, 17, 19, 20, 21, 22, 25, 26, 34, 44, 63, 92, 124, 130, 281).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "pinned-over-picture",
+   "width": 1440,
+   "message": "Pinned large text slides across pictures while the page scrolls: \"Your skills,\" (screen 1, 100% over a picture); \"matched.\" (screen 1, 100% over a picture)",
+   "fix": "Jurors read a pinned title crossing drawings or photographs as a collision. Keep the pictures in the column the title does not occupy, or unpin it.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "long-pin",
+   "width": 1440,
+   "message": "The same large text stays on screen for 3 screens in a row: \"How a match is made\"; \"Read.\"",
+   "fix": "A pinned element earns two screens, and something must change at each. Shorten the run or give every screen its own content."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/after/home/desktop-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/after/home/desktop-page-01.jpg",
+    "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/after/home/desktop-page-02.jpg",
+    "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/after/home/desktop-page-03.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/after/home/tablet-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/after/home/tablet-page-01.jpg",
+    "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/after/home/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/after/home/mobile-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/after/home/mobile-page-01.jpg",
+    "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/after/home/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

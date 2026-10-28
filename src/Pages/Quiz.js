@@ -70,7 +70,7 @@ function Quiz() {
             ['A colour', 'Builder, Planner, Relater or Adventurer: what you enjoy doing most.'],
             ['A type', 'A, B, C or D: what you need around you to do your best work.'],
           ].map(([t, d], i) => (
-            <div key={t} className={`p-7 ${i === 0 ? 'bg-[var(--sun)]' : 'bg-[var(--paper-2)]'}`}>
+            <div key={t} className={`rounded-[var(--r-lg)] p-7 ${i === 0 ? 'bg-[var(--sun)]' : 'bg-[var(--paper-2)]'}`}>
               <h2 className="h-sm">{t}</h2>
               <p className="mt-2 text-[17px]">{d}</p>
             </div>
@@ -99,11 +99,11 @@ function Quiz() {
         </motion.div>
 
         <div className="mt-16 grid gap-4 md:grid-cols-2">
-          <motion.section initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.7 }} className="bg-[var(--paper-2)] p-8">
+          <motion.section initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.7 }} className="rounded-[var(--r-lg)] bg-[var(--paper-2)] p-8">
             <h2 className="h-md">{r.color}: the {COLORS[r.color].name}</h2>
             <p className="mt-4 text-[18px]">{COLORS[r.color].text}</p>
           </motion.section>
-          <motion.section initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.7 }} className="bg-[var(--ink)] p-8 text-[var(--paper)]">
+          <motion.section initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.7 }} className="rounded-[var(--r-lg)] bg-[var(--ink)] p-8 text-[var(--paper)]">
             <h2 className="h-md">Type {r.letter}</h2>
             <p className="mt-4 text-[18px]">{LETTERS[r.letter]}</p>
           </motion.section>
@@ -131,8 +131,8 @@ function Quiz() {
           <button className="link text-[17px]" onClick={() => setStep(-1)}>Start over</button>
         )}
       </div>
-      <div className="mt-3 h-[6px] bg-[var(--paper-2)]" role="progressbar" aria-valuemin={0} aria-valuemax={total} aria-valuenow={step}>
-        <motion.div className="h-full bg-[var(--ink)]" animate={{ width: `${(step / total) * 100}%` }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} />
+      <div className="mt-3 h-[6px] overflow-hidden rounded-[var(--r-pill)] bg-[var(--paper-2)]" role="progressbar" aria-valuemin={0} aria-valuemax={total} aria-valuenow={step}>
+        <motion.div className="h-full rounded-[var(--r-pill)] bg-[var(--ink)]" animate={{ width: `${(step / total) * 100}%` }} transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }} />
       </div>
 
       <AnimatePresence mode="wait">
@@ -150,7 +150,7 @@ function Quiz() {
               <button
                 key={i}
                 onClick={() => answer(a, i)}
-                className="min-h-[72px] px-6 py-5 text-left text-[clamp(19px,1.6vw,23px)] transition-[background-color,transform] duration-200 hover:-translate-y-[2px] active:scale-[0.99]"
+                className="min-h-[72px] rounded-[var(--r-md)] px-6 py-5 text-left text-[clamp(19px,1.6vw,23px)] transition-[background-color,transform] duration-200 hover:-translate-y-[2px] active:scale-[0.99]"
                 style={{ background: picked === i ? 'var(--sun)' : i === 1 ? 'var(--paper-2)' : 'var(--paper-3)' }}
               >
                 {tidy(a.content)}

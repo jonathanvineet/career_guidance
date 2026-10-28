@@ -67,7 +67,7 @@ function Appointments() {
           {COUNSELLORS.map((c) => (
             <label
               key={c.value}
-              className="flex min-h-[88px] cursor-pointer items-center gap-5 px-6 py-5 transition-colors duration-200 focus-within:outline focus-within:outline-2"
+              className="flex min-h-[88px] cursor-pointer items-center gap-5 rounded-[var(--r-lg)] px-6 py-5 transition-colors duration-200 focus-within:outline focus-within:outline-2"
               style={{ background: formData.counselor === c.value ? 'var(--sun)' : 'var(--paper-2)' }}
             >
               <input
@@ -122,7 +122,7 @@ function Appointments() {
           </button>
         </div>
       </form>
-      <Toaster toastOptions={{ style: { borderRadius: 0, background: 'var(--ink)', color: 'var(--paper)', fontFamily: 'var(--serif)' } }} />
+      <Toaster toastOptions={{ style: { borderRadius: 20, background: 'var(--ink)', color: 'var(--paper)', fontFamily: 'var(--serif)' } }} />
     </div>
   );
 }

@@ -7,9 +7,9 @@ const ease = [0.22, 1, 0.36, 1];
 export default function AuthShell({ title, mark, line, children, footer }) {
     return (
         <div className="grid min-h-[100svh] lg:grid-cols-[1.05fr_1fr]">
-            <Toaster position="top-right" toastOptions={{ style: { borderRadius: 0, background: "var(--ink)", color: "var(--paper)", fontFamily: "var(--serif)" } }} />
+            <Toaster position="top-right" toastOptions={{ style: { borderRadius: 20, background: "var(--ink)", color: "var(--paper)", fontFamily: "var(--serif)" } }} />
 
-            <div className="relative flex flex-col justify-between overflow-hidden bg-[var(--ink)] p-[var(--gutter)] text-[var(--paper)] max-lg:min-h-[38svh]">
+            <div className="relative m-[clamp(8px,1vw,16px)] flex flex-col justify-between overflow-hidden rounded-[var(--r-xl)] bg-[var(--ink)] p-[var(--gutter)] text-[var(--paper)] max-lg:min-h-[36svh]">
                 <Link to="/" className="text-[26px] font-semibold tracking-[-0.02em]">
                     CareerGAIde
                 </Link>

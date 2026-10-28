@@ -133,7 +133,7 @@ function JobSearch() {
                     type="button"
                     onClick={() => setActive(i)}
                     aria-pressed={active === i}
-                    className="grid w-full grid-cols-[32px_1fr] items-baseline px-3 py-3 text-left transition-colors duration-200 hover:bg-[var(--paper-2)]"
+                    className="grid w-full grid-cols-[32px_1fr] items-baseline rounded-[var(--r-md)] px-4 py-3 text-left transition-colors duration-200 hover:bg-[var(--paper-2)]"
                     style={{ background: active === i ? 'var(--sun)' : undefined }}
                   >
                     <span className="data tnum !text-[var(--ink)]">{i + 1}</span>
@@ -144,7 +144,7 @@ function JobSearch() {
                         {r.similarity !== undefined && ` · ${Number(r.similarity).toFixed(2)}`}
                       </span>
                       {r.similarity !== undefined && (
-                        <span className="mt-2 block h-[6px] bg-[var(--paper-3)]">
+                        <span className="mt-2 block h-[6px] overflow-hidden rounded-[var(--r-pill)] bg-[var(--paper-3)]">
                           <span data-bar className="block h-full bg-[var(--ink)]" style={{ width: `${(r.similarity / maxSim) * 100}%` }} />
                         </span>
                       )}
@@ -164,7 +164,7 @@ function JobSearch() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className="bg-[var(--ink)] p-[clamp(24px,3vw,44px)] text-[var(--paper)]"
+                  className="rounded-[var(--r-xl)] bg-[var(--ink)] p-[clamp(24px,3vw,44px)] text-[var(--paper)]"
                   aria-live="polite"
                 >
                   <h3 className="text-[clamp(28px,2.6vw,40px)] leading-[1.05] tracking-[-0.02em]">{job.job_title}</h3>
@@ -194,7 +194,7 @@ function JobSearch() {
                     </>
                   )}
 
-                  <section className="mt-8 bg-[var(--paper)] p-5 text-[var(--ink)]" aria-live="polite" aria-busy={aiLoading}>
+                  <section className="mt-8 rounded-[var(--r-lg)] bg-[var(--paper)] p-6 text-[var(--ink)]" aria-live="polite" aria-busy={aiLoading}>
                     <div className="flex items-baseline justify-between gap-4">
                       <h4 className="text-[21px] leading-tight">AI coach</h4>
                       {aiAnalysis?.match_score !== undefined && (
@@ -227,7 +227,7 @@ function JobSearch() {
                           </>
                         )}
                         {aiAnalysis.interview_tip && (
-                          <p className="mt-4 bg-[var(--sun)] px-3 py-2 text-[16px]">
+                          <p className="mt-4 rounded-[var(--r-sm)] bg-[var(--sun)] px-4 py-3 text-[16px]">
                             <span className="font-medium">Interview tip:</span> {aiAnalysis.interview_tip}
                           </p>
                         )}
@@ -253,7 +253,7 @@ function JobSearch() {
           </div>
         </section>
       )}
-      <Toaster toastOptions={{ style: { borderRadius: 0, background: 'var(--ink)', color: 'var(--paper)', fontFamily: 'var(--serif)' } }} />
+      <Toaster toastOptions={{ style: { borderRadius: 20, background: 'var(--ink)', color: 'var(--paper)', fontFamily: 'var(--serif)' } }} />
     </div>
   );
 }

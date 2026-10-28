@@ -30,7 +30,7 @@ function SimilarJobs() {
           ))}
         </ol>
       ) : (
-        <div data-reveal className="bg-[var(--paper-2)] p-10">
+        <div data-reveal className="rounded-[var(--r-lg)] bg-[var(--paper-2)] p-10">
           <p className="text-[21px]">Pick a job from your matches first, then ask for similar ones.</p>
           <Link to="/jobs" className="btn mt-6">
             Go to my matches <span className="arrow" aria-hidden="true">→</span>

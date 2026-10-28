@@ -1,0 +1,1428 @@
+{
+ "url": "http://localhost:3123/jobs",
+ "at": "2026-10-28T12:56:44.474Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.28,
+    0.87
+   ],
+   "motion": {
+    "elements": 10,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 10,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1660,
+     "screens": 1.8,
+     "words": 140,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 0,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Your jobs, ranked.",
+     "words": 3,
+     "chars": 18,
+     "lines": 1,
+     "size": 92.2,
+     "vw": 6.4,
+     "font": "Newsreader",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 0.92,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.63,
+     "top": 162,
+     "mixedFonts": [
+      "Newsreader",
+      "Newsreader italic"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Your jobs, ranked.",
+     "words": 3,
+     "lines": 1,
+     "size": 92.2,
+     "font": "Newsreader"
+    },
+    "headings": [
+     {
+      "text": "Your jobs, ranked.",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 92.2,
+      "vw": 6.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.63,
+      "top": 162,
+      "mixedFonts": [
+       "Newsreader",
+       "Newsreader italic"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Drop your resume here, or choose a file",
+      "words": 8,
+      "chars": 39,
+      "lines": 1,
+      "size": 37.4,
+      "vw": 2.6,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.41,
+      "top": 511,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Read your resume, rank real jobs, and learn the skills between them.",
+      "words": 12,
+      "chars": 68,
+      "lines": 3,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 1028,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "CareerGAIde",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 280.8,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 1,
+      "top": 1436,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 2,
+     "centered": 2,
+     "medianWords": 8,
+     "mixedFontHeadings": 1
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Newsreader",
+       "share": 0.89,
+       "mono": false
+      },
+      {
+       "family": "IBM Plex Mono",
+       "share": 0.11,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      15,
+      16,
+      17,
+      19,
+      25,
+      26,
+      34,
+      37,
+      92,
+      281
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 280.8,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "text": "CareerGAIde"
+     },
+     "monoShare": 0.11,
+     "monoProseShare": 0.11,
+     "monoFamilies": [
+      "IBM Plex Mono"
+     ],
+     "monoSamples": [
+      "career_guidance",
+      "React 18, Flask 3, Tailwind",
+      "scikit-learn TF-IDF, cosine",
+      "PyMuPDF, Tesseract OCR"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.14,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#efebe3",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.27,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#1b1e2b",
+       "top": 900,
+       "hsl": {
+        "h": 229,
+        "s": 0.23,
+        "l": 0.14
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#d9d3c4",
+       "share": 0.31
+      },
+      {
+       "color": "#efebe3",
+       "share": 0.27
+      },
+      {
+       "color": "#555867",
+       "share": 0.24
+      },
+      {
+       "color": "#1b1e2b",
+       "share": 0.13
+      },
+      {
+       "color": "#8a8b92",
+       "share": 0.04
+      }
+     ],
+     "button": {
+      "bg": "#1b1e2b",
+      "hsl": {
+       "h": 229,
+       "s": 0.23,
+       "l": 0.14
+      },
+      "fg": "#efebe3"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 2,
+     "inHero": 2,
+     "radius": "pill",
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Sign in",
+      "Rank my jobs →"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 6,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "ibm plex mono",
+     "newsreader"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1660,
+    "margins": {
+     "left": 58,
+     "right": 115
+    },
+    "sections": [
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 0,
+      "height": 900,
+      "words": 51,
+      "media": 0,
+      "middle": 285,
+      "heading": {
+       "text": "Your jobs,",
+       "size": 92,
+       "tag": "h1"
+      },
+      "left": 58,
+      "right": 58,
+      "textLeft": 58,
+      "textRight": 115,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.overflow-hidden.bg-[var(--ink)]",
+      "tag": "footer",
+      "top": 900,
+      "height": 760,
+      "words": 76,
+      "media": 0,
+      "middle": 81,
+      "heading": {
+       "text": "Read your resume, rank real jobs, and learn the sk",
+       "size": 34,
+       "tag": "p"
+      },
+      "left": 58,
+      "right": 193,
+      "textLeft": 0,
+      "textRight": 0,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 684,
+      "height": 344
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Your jobs, ranked.",
+      "size": 92,
+      "top": 162,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 58,
+      "n": 2
+     },
+     {
+      "x": 457,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 3,
+    "bodySize": 24,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.26,
+    "voidBox": {
+     "x": 0,
+     "y": 600,
+     "w": 1140,
+     "h": 300
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 2,
+   "filled": [
+    0.28,
+    0.73
+   ],
+   "motion": {
+    "elements": 10,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 10,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1690,
+     "screens": 1.7,
+     "words": 134,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 0,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Your jobs, ranked.",
+     "words": 3,
+     "chars": 18,
+     "lines": 1,
+     "size": 49.2,
+     "vw": 6.4,
+     "font": "Newsreader",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 0.92,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.61,
+     "top": 184,
+     "mixedFonts": [
+      "Newsreader",
+      "Newsreader italic"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Your jobs, ranked.",
+     "words": 3,
+     "lines": 1,
+     "size": 49.2,
+     "font": "Newsreader"
+    },
+    "headings": [
+     {
+      "text": "CareerGAIde",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Newsreader",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 15,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Your jobs, ranked.",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 49.2,
+      "vw": 6.4,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.61,
+      "top": 184,
+      "mixedFonts": [
+       "Newsreader",
+       "Newsreader italic"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Drop your resume here, or choose a file",
+      "words": 8,
+      "chars": 39,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.54,
+      "top": 478,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "CareerGAIde",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 149.8,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 1,
+      "top": 1571,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 4,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 2,
+     "medianWords": 1,
+     "mixedFontHeadings": 1
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Newsreader",
+       "share": 0.88,
+       "mono": false
+      },
+      {
+       "family": "IBM Plex Mono",
+       "share": 0.12,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      15,
+      16,
+      17,
+      19,
+      24,
+      26,
+      49,
+      150
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": {
+      "font": "Newsreader",
+      "size": 19,
+      "leading": 1.42,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 5.9
+     },
+     "measureChars": 53,
+     "max": {
+      "size": 149.8,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "text": "CareerGAIde"
+     },
+     "monoShare": 0.12,
+     "monoProseShare": 0.12,
+     "monoFamilies": [
+      "IBM Plex Mono"
+     ],
+     "monoSamples": [
+      "career_guidance",
+      "React 18, Flask 3, Tailwind",
+      "scikit-learn TF-IDF, cosine",
+      "PyMuPDF, Tesseract OCR"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.15,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#efebe3",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.27,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#1b1e2b",
+       "top": 1024,
+       "hsl": {
+        "h": 229,
+        "s": 0.23,
+        "l": 0.14
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#d9d3c4",
+       "share": 0.32
+      },
+      {
+       "color": "#efebe3",
+       "share": 0.28
+      },
+      {
+       "color": "#555867",
+       "share": 0.25
+      },
+      {
+       "color": "#1b1e2b",
+       "share": 0.09
+      },
+      {
+       "color": "#8a8b92",
+       "share": 0.04
+      }
+     ],
+     "button": {
+      "bg": "#1b1e2b",
+      "hsl": {
+       "h": 229,
+       "s": 0.23,
+       "l": 0.14
+      },
+      "fg": "#efebe3"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Sign in",
+      "Rank my jobs →"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "ibm plex mono",
+     "newsreader"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1690,
+    "margins": {
+     "left": 31,
+     "right": 43
+    },
+    "sections": [
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 0,
+      "height": 1024,
+      "words": 51,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Your jobs,",
+       "size": 49,
+       "tag": "h1"
+      },
+      "left": 31,
+      "right": 31,
+      "textLeft": 31,
+      "textRight": 177,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.overflow-hidden.bg-[var(--ink)]",
+      "tag": "footer",
+      "top": 1024,
+      "height": 666,
+      "words": 76,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 31,
+      "right": 43,
+      "textLeft": 0,
+      "textRight": 0,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [
+     {
+      "top": 720,
+      "height": 432
+     }
+    ],
+    "h1s": [
+     {
+      "text": "Your jobs, ranked.",
+      "size": 49,
+      "top": 184,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 31,
+      "n": 2
+     },
+     {
+      "x": 234,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 3,
+    "bodySize": 19,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.47,
+    1,
+    1
+   ],
+   "motion": {
+    "elements": 10,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 10,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 1710,
+     "screens": 2,
+     "words": 134,
+     "img": 0,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 0,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 0,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Your jobs, ranked.",
+     "words": 3,
+     "chars": 18,
+     "lines": 1,
+     "size": 44,
+     "vw": 11.3,
+     "font": "Newsreader",
+     "weight": 500,
+     "tracking": -0.035,
+     "leading": 0.92,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.92,
+     "top": 152,
+     "mixedFonts": [
+      "Newsreader",
+      "Newsreader italic"
+     ],
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Your jobs, ranked.",
+     "words": 3,
+     "lines": 1,
+     "size": 44,
+     "font": "Newsreader"
+    },
+    "headings": [
+     {
+      "text": "CareerGAIde",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Newsreader",
+      "weight": 600,
+      "tracking": -0.02,
+      "leading": 1.55,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.37,
+      "top": 15,
+      "tag": "a",
+      "kind": "heading"
+     },
+     {
+      "text": "Your jobs, ranked.",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 44,
+      "vw": 11.3,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 152,
+      "mixedFonts": [
+       "Newsreader",
+       "Newsreader italic"
+      ],
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Drop your resume here, or choose a file",
+      "words": 8,
+      "chars": 39,
+      "lines": 2,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.015,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 439,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Read your resume, rank real jobs, and learn the skills between them.",
+      "words": 12,
+      "chars": 68,
+      "lines": 3,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Newsreader",
+      "weight": 400,
+      "tracking": -0.02,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.75,
+      "top": 940,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "CareerGAIde",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 76.1,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 0.92,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 1,
+      "top": 1649,
+      "tag": "p",
+      "kind": "statement"
+     }
+    ],
+    "headingSummary": {
+     "count": 5,
+     "maxLines": 3,
+     "over2Lines": 0,
+     "statements": 2,
+     "centered": 2,
+     "medianWords": 8,
+     "mixedFontHeadings": 1
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Newsreader",
+       "share": 0.88,
+       "mono": false
+      },
+      {
+       "family": "IBM Plex Mono",
+       "share": 0.12,
+       "mono": true
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      15,
+      16,
+      17,
+      19,
+      24,
+      26,
+      44,
+      76
+     ],
+     "sizeCount": 9,
+     "notLoaded": [],
+     "body": {
+      "font": "Newsreader",
+      "size": 19,
+      "leading": 1.42,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 5.9
+     },
+     "measureChars": 38,
+     "max": {
+      "size": 76.1,
+      "vw": 19.5,
+      "font": "Newsreader",
+      "text": "CareerGAIde"
+     },
+     "monoShare": 0.12,
+     "monoProseShare": 0.12,
+     "monoFamilies": [
+      "IBM Plex Mono"
+     ],
+     "monoSamples": [
+      "career_guidance",
+      "React 18, Flask 3, Tailwind",
+      "scikit-learn TF-IDF, cosine",
+      "PyMuPDF, Tesseract OCR"
+     ],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.15,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#efebe3",
+     "bodyBgHsl": {
+      "h": 40,
+      "s": 0.27,
+      "l": 0.91
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#1b1e2b",
+       "top": 844,
+       "hsl": {
+        "h": 229,
+        "s": 0.23,
+        "l": 0.14
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#d9d3c4",
+       "share": 0.32
+      },
+      {
+       "color": "#efebe3",
+       "share": 0.28
+      },
+      {
+       "color": "#555867",
+       "share": 0.25
+      },
+      {
+       "color": "#1b1e2b",
+       "share": 0.09
+      },
+      {
+       "color": "#8a8b92",
+       "share": 0.04
+      }
+     ],
+     "button": {
+      "bg": "#1b1e2b",
+      "hsl": {
+       "h": 229,
+       "s": 0.23,
+       "l": 0.14
+      },
+      "fg": "#efebe3"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 52,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Sign in",
+      "Rank my jobs →"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 72,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "ibm plex mono",
+     "newsreader"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 1710,
+    "margins": {
+     "left": 16,
+     "right": 19
+    },
+    "sections": [
+     {
+      "sel": "main#main",
+      "tag": "main",
+      "top": 0,
+      "height": 844,
+      "words": 51,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Your jobs,",
+       "size": 44,
+       "tag": "h1"
+      },
+      "left": 16,
+      "right": 16,
+      "textLeft": 16,
+      "textRight": 20,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "footer.overflow-hidden.bg-[var(--ink)]",
+      "tag": "footer",
+      "top": 844,
+      "height": 866,
+      "words": 76,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 16,
+      "right": 19,
+      "textLeft": 0,
+      "textRight": 0,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Your jobs, ranked.",
+      "size": 44,
+      "top": 152,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 16,
+      "n": 2
+     },
+     {
+      "x": 196,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 3,
+    "bodySize": 19,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "mixed-font-headline",
+   "width": 1440,
+   "message": "1 headline(s) switch typeface or to italic mid-line (the \"one italic serif word\" move).",
+   "fix": "Set the whole headline in one face. Emphasis comes from the words.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "mono",
+   "width": 1440,
+   "message": "Monospace type outside code: IBM Plex Mono — e.g. \"career_guidance\", \"React 18, Flask 3, Tailwind\", \"scikit-learn TF-IDF, cosine\", \"PyMuPDF, Tesseract OCR\"",
+   "fix": "Set it in the text face. Monospace is for literal code inside <pre>/<code> only.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "palette-cream",
+   "width": 1440,
+   "message": "Yellow-cream background (page background #efebe3, text #efebe3).",
+   "fix": "Use the drawn palette. If you want warmth, take a low-chroma stone or bone, not a yellow cream.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "11 different font sizes (13, 15, 16, 17, 19, 25, 26, 34, 37, 92, 281).",
+   "fix": "A page needs about five: display, heading, lead, body, small."
+  },
+  {
+   "level": "FAIL",
+   "id": "few-pictures",
+   "width": 1440,
+   "message": "Only 0 picture(s) on the page (0 photographs, footage or raster images, 0 interface fragments). Drawings in SVG do not count.",
+   "fix": "Find real pictures of the subject's world with scripts/assets.mjs (photographs, archival images, maps, engravings, footage), download them to assets/ and give them room: a hero picture, one per section that has a subject, a full-width band. At least four, usually six to twelve."
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "off-centre",
+   "width": 1440,
+   "message": "The margins differ: 58px on the left, 115px on the right, at 1440px.",
+   "fix": "Put the navigation and the content on one pair of margins; check for padding on one side only, a scrollbar gutter, or a header on another inset than the page."
+  },
+  {
+   "level": "WARN",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Little motion: 10 element(s) moved while the page loaded and scrolled.",
+   "fix": "Give every section an entrance for its parts (not one fade of the whole block) and add one moving picture: a looping clip or a slow move on a photograph."
+  },
+  {
+   "level": "WARN",
+   "id": "grey-body",
+   "width": 768,
+   "message": "The running text is a soft grey on its ground (5.9:1).",
+   "fix": "Set body copy in the full ink (7:1 or more). Keep the muted ink for secondary notes; pages read thin and unfinished when everything is grey.",
+   "alsoAt": [
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "blank-gap",
+   "width": 768,
+   "message": "A 432px stretch at 720px holds nothing.",
+   "fix": "Check that it is a deliberate rest (once per page at most); otherwise close it to the normal section gap."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/before/jobs/desktop-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/before/jobs/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/before/jobs/tablet-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/before/jobs/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/before/jobs/mobile-fold.jpg",
+   "pages": [
+    "/Users/jonathan/elco/NBA/career_guidance/.taste-skill/before/jobs/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

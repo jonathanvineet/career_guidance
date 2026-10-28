@@ -51,7 +51,7 @@ function ResumeParse() {
           {isLoading && <Working label="Reading the page and checking every phrase against the skills list" />}
         </form>
 
-        <section data-reveal aria-labelledby="skills-title" className="bg-[var(--paper-2)] p-[clamp(24px,3vw,40px)]">
+        <section data-reveal aria-labelledby="skills-title" className="rounded-[var(--r-lg)] bg-[var(--paper-2)] p-[clamp(24px,3vw,40px)]">
           <h2 id="skills-title" className="h-md">
             {skills.length ? `${skills.length} skills found` : 'Skills found'}
           </h2>
@@ -75,7 +75,7 @@ function ResumeParse() {
           )}
         </section>
       </div>
-      <Toaster toastOptions={{ style: { borderRadius: 0, background: 'var(--ink)', color: 'var(--paper)', fontFamily: 'var(--serif)' } }} />
+      <Toaster toastOptions={{ style: { borderRadius: 20, background: 'var(--ink)', color: 'var(--paper)', fontFamily: 'var(--serif)' } }} />
     </div>
   );
 }
