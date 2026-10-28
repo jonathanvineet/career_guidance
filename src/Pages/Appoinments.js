@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
+import { API, PageHead, ResumeDrop } from '../Components/ui';
+import { useReveal } from '../lib/motion';
+
+const COUNSELLORS = [
+  { value: 'counselor1', name: 'Counsellor 1', focus: 'Data, analytics and engineering careers' },
+  { value: 'counselor2', name: 'Counsellor 2', focus: 'First jobs, switching fields and study plans' },
+];
 
 function Appointments() {
   const [formData, setFormData] = useState({
@@ -9,146 +16,113 @@ function Appointments() {
     counselor: '',
     date: '',
     time: '',
-    resume: null  // Add state for uploaded resume
+    resume: null
   });
+  const [sending, setSending] = useState(false);
+  const [booked, setBooked] = useState(false);
+  const ref = useReveal();
 
   const handleChange = (event) => {
-    const { name, value, files } = event.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: name === 'resume' ? files[0] : value  // Handle file upload separately
-    }));
+    const { name, value } = event.target;
+    setFormData(prevData => ({ ...prevData, [name]: value }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const { name, email, phone, counselor, date, time, resume } = formData;
-
     const formDataToSend = new FormData();
-    formDataToSend.append('name', name);
-    formDataToSend.append('email', email);
-    formDataToSend.append('phone', phone);
-    formDataToSend.append('counselor', counselor);
-    formDataToSend.append('date', date);
-    formDataToSend.append('time', time);
-    formDataToSend.append('resume', resume); // Append uploaded resume
+    Object.entries(formData).forEach(([k, v]) => v && formDataToSend.append(k, v));
+    setSending(true);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/book-appointment', {
+      const response = await fetch(`${API}/book-appointment`, {
         method: 'POST',
         body: formDataToSend
       });
 
       if (response.ok) {
-        toast.success("Appointment booked successfully!");
+        toast.success('Session booked. We will email you a confirmation.');
+        setBooked(true);
       } else {
         toast.error('Failed to book appointment');
       }
     } catch (error) {
       console.error('Error booking appointment:', error);
-      toast.error('Error in connection');
+      toast.error('Could not reach the booking service.');
+    } finally {
+      setSending(false);
     }
   };
 
+  const today = new Date().toISOString().slice(0, 10);
+
   return (
-    <div className="container mx-auto max-w-2xl p-5 shadow-lg rounded-lg bg-white mt-10">
-      <Toaster />
-      <h1 className="text-3xl font-bold text-center text-blue-800 mb-10">Book an Appointment</h1>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label htmlFor="name" className="block font-semibold text-gray-700">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-          />
+    <div ref={ref} className="frame min-h-screen pb-[clamp(96px,12vw,180px)]">
+      <PageHead title="Book a" mark="counsellor.">
+        Bring your matches and your profile. Attach your resume so your counsellor has read it before you sit down.
+      </PageHead>
+
+      <form onSubmit={handleSubmit} className="grid gap-x-16 gap-y-12 lg:grid-cols-[1fr_1.1fr]">
+        <fieldset data-reveal className="space-y-4">
+          <legend className="h-sm mb-5">Choose who you will talk to</legend>
+          {COUNSELLORS.map((c) => (
+            <label
+              key={c.value}
+              className="flex min-h-[88px] cursor-pointer items-center gap-5 px-6 py-5 transition-colors duration-200 focus-within:outline focus-within:outline-2"
+              style={{ background: formData.counselor === c.value ? 'var(--sun)' : 'var(--paper-2)' }}
+            >
+              <input
+                type="radio"
+                name="counselor"
+                value={c.value}
+                checked={formData.counselor === c.value}
+                onChange={handleChange}
+                required
+                className="h-5 w-5 accent-[var(--ink)]"
+              />
+              <span>
+                <span className="block text-[22px] leading-tight">{c.name}</span>
+                <span className="block text-[16px] text-[var(--ink-2)]">{c.focus}</span>
+              </span>
+            </label>
+          ))}
+
+          <div className="pt-6">
+            <p className="mb-3 text-[17px]">Your resume (optional)</p>
+            <ResumeDrop id="resume" file={formData.resume} onFile={(f) => setFormData((d) => ({ ...d, resume: f }))} />
+          </div>
+        </fieldset>
+
+        <div data-reveal className="space-y-6">
+          <div className="field">
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" name="name" autoComplete="name" value={formData.name} onChange={handleChange} required />
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="field">
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" name="email" autoComplete="email" value={formData.email} onChange={handleChange} required />
+            </div>
+            <div className="field">
+              <label htmlFor="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autoComplete="tel" value={formData.phone} onChange={handleChange} required />
+            </div>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="field">
+              <label htmlFor="date">Date</label>
+              <input type="date" id="date" name="date" min={today} value={formData.date} onChange={handleChange} required />
+            </div>
+            <div className="field">
+              <label htmlFor="time">Time</label>
+              <input type="time" id="time" name="time" value={formData.time} onChange={handleChange} required />
+            </div>
+          </div>
+          <button type="submit" className="btn w-full sm:w-auto" disabled={sending}>
+            {booked ? 'Booked. Book another?' : sending ? 'Booking…' : 'Book the session'} <span className="arrow" aria-hidden="true">→</span>
+          </button>
         </div>
-        <div>
-          <label htmlFor="email" className="block font-semibold text-gray-700">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-          />
-        </div>
-        <div>
-          <label htmlFor="phone" className="block font-semibold text-gray-700">Phone:</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            className="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-          />
-        </div>
-        <div>
-          <label htmlFor="counselor" className="block font-semibold text-gray-700">Select Counselor:</label>
-          <select
-            id="counselor"
-            name="counselor"
-            value={formData.counselor}
-            onChange={handleChange}
-            required
-            className="form-select mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-          >
-            <option value="">-- Select --</option>
-            <option value="counselor1">Counselor 1</option>
-            <option value="counselor2">Counselor 2</option>
-            {/* Additional options can be added here */}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="date" className="block font-semibold text-gray-700">Date:</label>
-          <input
-            type="date"
-            id="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-            required
-            className="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-          />
-        </div>
-        <div>
-          <label htmlFor="time" className="block font-semibold text-gray-700">Time:</label>
-          <input
-            type="time"
-            id="time"
-            name="time"
-            value={formData.time}
-            onChange={handleChange}
-            required
-            className="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-          />
-        </div>
-        <div>
-          <label htmlFor="resume" className="block font-semibold text-gray-700">Upload Resume:</label>
-          <input
-            type="file"
-            id="resume"
-            name="resume"
-            accept=".pdf,.doc,.docx" // Restrict file types to PDF, DOC, DOCX
-            onChange={handleChange}
-            className="form-input mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
-          />
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
-        >
-          Book Appointment
-        </button>
       </form>
+      <Toaster toastOptions={{ style: { borderRadius: 0, background: 'var(--ink)', color: 'var(--paper)', fontFamily: 'var(--serif)' } }} />
     </div>
   );
 }

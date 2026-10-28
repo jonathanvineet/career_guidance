@@ -1,361 +1,259 @@
-import React, { useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Toaster, toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
+import { API, PageHead, ResumeDrop, Working } from '../Components/ui';
+import { gsap, reducedMotion, scrollToEl, useReveal } from '../lib/motion';
+
+// skills_in_jd arrives as a Python set literal: "{'python', 'sql'}"
+const skillList = (value) => {
+  if (Array.isArray(value)) return value;
+  return [...String(value || '').matchAll(/'([^']+)'/g)].map((m) => m[1].toLowerCase());
+};
 
 function JobSearch() {
   const [selectedFile, setSelectedFile] = useState(null);
-  const [fileName, setFileName] = useState('');
   const [recommendations, setRecommendations] = useState([]);
-  const [selectedJobDescription, setSelectedJobDescription] = useState('');
-  const [selectedJobTitle, setSelectedJobTitle] = useState('');
-  const [selectedCompany, setSelectedCompany] = useState('');
-  const [skills, setSkills] = useState('');
-  const [missingSkills, setMissingSkills] = useState([]);
+  const [active, setActive] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+  const [similarLoading, setSimilarLoading] = useState(false);
   const [aiAnalysis, setAiAnalysis] = useState(null);
   const [aiLoading, setAiLoading] = useState(false);
-
-  const [isLoading, setIsLoading] = useState(false); // Loading state
   const navigate = useNavigate();
-
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setSelectedFile(file);
-    setFileName(file ? file.name : '');
-  };
+  const ref = useReveal();
+  const results = useRef(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!selectedFile) return;
+    const formData = new FormData();
+    formData.append('resume', selectedFile);
+    setIsLoading(true);
 
-    if (selectedFile) {
-      const formData = new FormData();
-      formData.append('resume', selectedFile);
-
-      console.log('File selected:', selectedFile.name);
-      console.log('Uploading file...');
-      setIsLoading(true);
-      fetch('http://127.0.0.1:8000/jobs', {
-        method: 'POST',
-        body: formData
+    fetch(`${API}/jobs`, { method: 'POST', body: formData })
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Failed to upload file.');
+        const data = await response.json();
+        setRecommendations(Array.isArray(data) ? data : []);
+        setActive(0);
+        requestAnimationFrame(() => scrollToEl(results.current));
       })
-        .then(async (response) => {
-          if (response.ok) {
-            const data = await response.json();
-            setRecommendations(data);
-          } else {
-            toast.error('Failed to upload file.');
-          }
-        })
-        .catch((error) => {
-          console.error('Error uploading file:', error);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
-    } else {
-      console.warn('No file selected.');
-    }
+      .catch((error) => {
+        console.error('Error uploading file:', error);
+        toast.error('Could not match that resume. Is the backend running on port 8000?');
+      })
+      .finally(() => setIsLoading(false));
   };
 
-  const fetchAiJobFit = (jobTitle, company, desc, skillsInJd, missing) => {
-    setAiLoading(true);
+  useLayoutEffect(() => {
+    if (!recommendations.length || reducedMotion()) return;
+    const ctx = gsap.context(() => {
+      gsap.from('[data-result]', { opacity: 0, y: 24, stagger: 0.06, duration: 0.7, ease: 'power3.out' });
+      gsap.from('[data-bar]', { scaleX: 0, transformOrigin: 'left', stagger: 0.06, duration: 1, ease: 'power3.inOut', delay: 0.2 });
+    }, results);
+    return () => ctx.revert();
+  }, [recommendations]);
+
+  const job = recommendations[active];
+  const jobSkills = job ? skillList(job.skills_in_jd) : [];
+  const missing = job ? (job.missing_skills || []).filter((s) => s.length > 2) : [];
+  const have = jobSkills.filter((s) => !missing.includes(s) && s.length > 1);
+  // Ask the Groq career coach about the open job; drop answers for jobs no longer open
+  useEffect(() => {
+    if (!job) return;
+    let current = true;
     setAiAnalysis(null);
-    fetch('http://127.0.0.1:8000/ai-job-fit', {
+    setAiLoading(true);
+    fetch(`${API}/ai-job-fit`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        job_title: jobTitle,
-        company_name: company,
-        job_description: desc,
-        skills: skillsInJd,
-        missing_skills: missing
-      })
+        job_title: job.job_title,
+        company_name: job.company_name,
+        job_description: job.Processed_JD,
+        skills: have,
+        missing_skills: missing,
+      }),
     })
       .then(async (res) => {
-        if (res.ok) {
-          const data = await res.json();
-          setAiAnalysis(data);
-        }
+        if (res.ok && current) setAiAnalysis(await res.json());
       })
-      .catch((err) => {
-        console.error('Error fetching AI job fit:', err);
-      })
-      .finally(() => {
-        setAiLoading(false);
-      });
-  };
+      .catch((err) => console.error('Error fetching AI job fit:', err))
+      .finally(() => current && setAiLoading(false));
+    return () => {
+      current = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [job]);
 
-  // Function to show job details
-  const showDetails = (jobTitle, company, description, skillsInJd, missing) => {
-    setSelectedJobTitle(jobTitle);
-    setSelectedCompany(company);
-    setSelectedJobDescription(description);
-    setSkills(skillsInJd);
-    setMissingSkills(missing);
-    fetchAiJobFit(jobTitle, company, description, skillsInJd, missing);
-  };
+  const maxSim = Math.max(...recommendations.map((r) => r.similarity || 0), 0.0001);
 
-  // Function to close modal
-  const closeModal = () => {
-    setSelectedJobDescription('');
-    setAiAnalysis(null);
-  };
-
-  // Function to handle view similar jobs
   const handleViewSimilarJobs = () => {
-    if (skills) {
-      const formData = new FormData();
-      formData.append('skills', skills);
-      fetch('http://127.0.0.1:8000/similar-jobs', {
-        method: 'POST',
-        body: formData
+    if (!jobSkills.length) return;
+    const formData = new FormData();
+    formData.append('skills', jobSkills.join(','));
+    setSimilarLoading(true);
+    fetch(`${API}/similar-jobs`, { method: 'POST', body: formData })
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Failed to fetch similar jobs.');
+        const similarJobs = await response.json();
+        navigate('/similar-jobs', { state: { similarJobs, from: job.job_title } });
       })
-        .then(async (response) => {
-          if (response.ok) {
-            const similarJobs = await response.json();
-            navigate('/similar-jobs', { state: { similarJobs } });
-          } else {
-            toast.error('Failed to fetch similar jobs.');
-          }
-        })
-        .catch((error) => {
-          console.error('Error fetching similar jobs:', error);
-        });
-    } else {
-      console.warn('No job description selected.');
-    }
+      .catch((error) => {
+        console.error('Error fetching similar jobs:', error);
+        toast.error('Could not fetch similar jobs.');
+      })
+      .finally(() => setSimilarLoading(false));
   };
+
   return (
-    <div className="min-h-screen pt-20 pb-32 selection:bg-purple-500/30">
-      <div className="container mx-auto max-w-5xl px-6 py-8 relative">
-        <div className="text-center mb-16 animate-fadeInUp">
-          <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight">
-            Find Your <span className="gradient-text">Perfect Match.</span>
-          </h1>
-          <p className="text-xl text-white/50 max-w-2xl mx-auto font-medium leading-relaxed">
-            Upload your resume and let our advanced AI reveal the opportunities that align with your unique expertise.
-          </p>
-        </div>
+    <div ref={ref} className="frame min-h-screen pb-[clamp(96px,12vw,180px)]">
+      <PageHead title="Your jobs," mark="ranked.">
+        Upload your resume and we rank 604 real listings by how closely their skills match yours, then show what each one asks for that you don't have.
+      </PageHead>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-10 items-center glass border border-white/10 rounded-[2.5rem] p-12 shadow-2xl animate-fadeInUp relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+      <form data-reveal onSubmit={handleSubmit} className="grid items-end gap-6 lg:grid-cols-[1fr_auto]">
+        <ResumeDrop id="fileInput" file={selectedFile} onFile={setSelectedFile} />
+        <button className="btn" type="submit" disabled={!selectedFile || isLoading}>
+          {isLoading ? 'Matching…' : 'Rank my jobs'} <span className="arrow" aria-hidden="true">→</span>
+        </button>
+      </form>
+      {isLoading && <Working label="Reading your resume and scoring every listing" />}
 
-          <div className="flex items-center justify-center w-full relative z-10">
-            <label htmlFor="fileInput" className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-white/10 hover:border-purple-500/50 rounded-3xl cursor-pointer bg-white/5 hover:bg-white/10 transition-all duration-500 group/label">
-              <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                <div className="w-24 h-24 mb-6 bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-white/10 rounded-2xl flex items-center justify-center text-white transform group-hover/label:scale-110 group-hover/label:rotate-3 transition-all duration-500 shadow-xl glow">
-                  <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                  </svg>
-                </div>
-                <p className="mb-3 text-lg font-bold text-white tracking-wide">Drop your resume here</p>
-                <p className="text-white/40 font-medium">PDF, DOCX, or Image (Max 10MB)</p>
-              </div>
-              <input id="fileInput" type="file" accept=".pdf,.doc,.docx,.jpg,.png" onChange={handleFileChange} className="hidden" />
-            </label>
-          </div>
-
-          {fileName && (
-            <div className="bg-purple-500/10 border border-purple-500/20 rounded-2xl px-8 py-4 w-full flex items-center justify-center gap-3 animate-fadeIn backdrop-blur-md relative z-10">
-              <span className="text-2xl">📄</span>
-              <p className="text-purple-300 font-bold tracking-tight">{fileName}</p>
-            </div>
-          )}
-
-          <button
-            className={`bg-gradient-to-r from-purple-500 to-pink-500 text-white px-12 py-5 rounded-2xl font-black text-xl shadow-[0_10px_30px_rgba(168,85,247,0.3)] hover:shadow-[0_15px_40px_rgba(168,85,247,0.5)] transform hover:scale-[1.02] active:scale-95 transition-all duration-300 w-full md:w-auto relative z-10 ${isLoading || !selectedFile ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
-            type="submit"
-            disabled={!selectedFile || isLoading}
-          >
-            {isLoading ? (
-              <span className="flex items-center justify-center gap-3">
-                <div className="w-6 h-6 border-3 border-white/20 border-t-white rounded-full animate-spin"></div>
-                Analyzing Profile...
-              </span>
-            ) : (selectedFile ? 'Reveal Matching Careers 🚀' : 'Select Resume')}
-          </button>
-        </form>
-        {isLoading ? (
-          <div className="text-center mt-20 glass border border-white/10 rounded-[2.5rem] p-16 shadow-2xl animate-fadeIn relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent"></div>
-            <div className="flex flex-col items-center gap-8 relative z-10">
-              <div className="w-20 h-20 border-6 border-purple-500/20 border-t-purple-500 rounded-full animate-spin"></div>
-              <div>
-                <p className="text-2xl font-black text-white mb-3 tracking-tight">Deciphering Your Potential...</p>
-                <p className="text-white/40 font-medium">Our AI is scanning thousands of careers to find your perfect fit.</p>
-              </div>
-            </div>
-          </div>
-        ) : (
-          recommendations.length > 0 && (
-            <div className="mt-24 animate-fadeInUp">
-              <div className="flex flex-col items-center mb-16 text-center">
-                <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Curated Matches</h2>
-                <div className="h-1.5 w-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {recommendations.map((recommendation, index) => (
-                  <div
-                    key={index}
-                    className="group glass-card p-1 shadow-2xl hover:shadow-[0_20px_50px_rgba(139,92,246,0.3)] transition-all duration-500 transform hover:-translate-y-3 overflow-hidden"
-                    style={{ animationDelay: `${index * 0.1}s` }}
+      {recommendations.length > 0 && (
+        <section ref={results} aria-labelledby="matches-title" className="mt-[clamp(96px,10vw,160px)] grid gap-12 lg:grid-cols-[1fr_1.1fr]">
+          <div>
+            <h2 id="matches-title" className="display h-md">
+              Top ten distinct titles
+            </h2>
+            <ol className="mt-8 space-y-1">
+              {recommendations.map((r, i) => (
+                <li key={`${r.job_title}-${i}`} data-result>
+                  <button
+                    type="button"
+                    onClick={() => setActive(i)}
+                    aria-pressed={active === i}
+                    className="grid w-full grid-cols-[32px_1fr] items-baseline px-3 py-3 text-left transition-colors duration-200 hover:bg-[var(--paper-2)]"
+                    style={{ background: active === i ? 'var(--sun)' : undefined }}
                   >
-                    <div className="h-full glass rounded-[22px] p-8 border border-white/5 group-hover:border-white/20 transition-all duration-500">
-                      <div className="w-14 h-14 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center text-3xl mb-6 shadow-inner border border-white/10 group-hover:scale-110 transition-transform">
-                        💼
-                      </div>
-                      <h3 className="text-2xl font-black text-white mb-2 leading-tight group-hover:text-purple-300 transition-colors">{recommendation.job_title}</h3>
-                      <p className="text-white/40 mb-8 font-bold flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        {recommendation.company_name}
-                      </p>
-                      <button
-                        onClick={() => showDetails(recommendation.job_title, recommendation.company_name, recommendation.Processed_JD, recommendation.skills_in_jd, recommendation.missing_skills)}
-                        className="bg-white/5 hover:bg-white/10 text-white font-black py-4 px-6 rounded-xl border border-white/10 hover:border-purple-500/40 transition-all duration-300 w-full flex items-center justify-center gap-2 group/btn"
-                      >
-                        Explore Journey
-                        <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )
-        )}
-        {selectedJobDescription && (
-          <div className="fixed inset-0 flex justify-center items-center z-[100] animate-fadeIn p-4">
-            <div className="fixed inset-0 bg-black/80 backdrop-blur-xl" onClick={closeModal}></div>
-            <div className="relative glass border border-white/10 rounded-[2.5rem] shadow-4xl max-w-3xl w-full mx-auto max-h-[85vh] overflow-hidden animate-fadeInUp flex flex-col">
-              {/* Header */}
-              <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-b border-white/10 px-10 py-8 relative">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-xs font-bold uppercase tracking-widest text-purple-400 bg-purple-500/10 px-3 py-1 rounded-full border border-purple-500/20">
-                    AI Career Architecture
-                  </span>
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight">
-                  {selectedJobTitle || 'Career Journey'}
-                </h2>
-                {selectedCompany && (
-                  <p className="text-white/50 font-bold mt-1 text-sm">{selectedCompany}</p>
-                )}
-                <div className="absolute top-8 right-8 cursor-pointer text-white/40 hover:text-white transition-colors" onClick={closeModal}>
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                </div>
-              </div>
+                    <span className="data tnum !text-[var(--ink)]">{i + 1}</span>
+                    <span>
+                      <span className="block text-[clamp(19px,1.5vw,23px)] leading-tight">{r.job_title}</span>
+                      <span className="data block">
+                        {r.company_name}
+                        {r.similarity !== undefined && ` · ${Number(r.similarity).toFixed(2)}`}
+                      </span>
+                      {r.similarity !== undefined && (
+                        <span className="mt-2 block h-[6px] bg-[var(--paper-3)]">
+                          <span data-bar className="block h-full bg-[var(--ink)]" style={{ width: `${(r.similarity / maxSim) * 100}%` }} />
+                        </span>
+                      )}
+                    </span>
+                  </button>
+                </li>
+              ))}
+            </ol>
+          </div>
 
-              {/* Content */}
-              <div className="px-10 py-8 overflow-y-auto custom-scrollbar flex-grow bg-[#0f172a]/50 flex flex-col gap-8">
-                {/* Groq AI Career Coach Section */}
-                <div className="rounded-3xl p-6 bg-gradient-to-br from-purple-900/30 via-slate-900/60 to-pink-900/20 border border-purple-500/30 shadow-2xl relative overflow-hidden">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-2">
-                      <span className="text-2xl">⚡</span>
-                      <h3 className="text-lg font-black text-white tracking-tight">AI Coach Fit Assessment</h3>
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <AnimatePresence mode="wait">
+              {job && (
+                <motion.article
+                  key={active}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  className="bg-[var(--ink)] p-[clamp(24px,3vw,44px)] text-[var(--paper)]"
+                  aria-live="polite"
+                >
+                  <h3 className="text-[clamp(28px,2.6vw,40px)] leading-[1.05] tracking-[-0.02em]">{job.job_title}</h3>
+                  <p className="data mt-2 !text-[var(--paper-3)]">
+                    {job.company_name} · {job.job_location}
+                    {job.Average_Salary > 0 ? ` · $${Math.round(job.Average_Salary).toLocaleString('en-US')}` : ''}
+                  </p>
+
+                  {have.length > 0 && (
+                    <>
+                      <p className="mt-8 text-[17px]">You have</p>
+                      <div className="mt-2 flex flex-wrap gap-[6px]">
+                        {have.map((s) => (
+                          <span key={s} className="chip">{s}</span>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                  {missing.length > 0 && (
+                    <>
+                      <p className="mt-6 text-[17px]">To learn</p>
+                      <div className="mt-2 flex flex-wrap gap-[6px]">
+                        {missing.map((s) => (
+                          <span key={s} className="chip chip--dark">{s}</span>
+                        ))}
+                      </div>
+                    </>
+                  )}
+
+                  <section className="mt-8 bg-[var(--paper)] p-5 text-[var(--ink)]" aria-live="polite" aria-busy={aiLoading}>
+                    <div className="flex items-baseline justify-between gap-4">
+                      <h4 className="text-[21px] leading-tight">AI coach</h4>
+                      {aiAnalysis?.match_score !== undefined && (
+                        <p className="data tnum !text-[var(--ink)]">fit {aiAnalysis.match_score}%</p>
+                      )}
                     </div>
-                    {aiAnalysis?.match_score && (
-                      <div className="flex items-center gap-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/40 px-4 py-1.5 rounded-full">
-                        <span className="text-xl font-black text-purple-300">{aiAnalysis.match_score}%</span>
-                        <span className="text-xs uppercase font-extrabold text-white/70 tracking-wider">Match</span>
+                    {aiLoading && (
+                      <div className="mt-3">
+                        <p className="mb-2 text-[16px] text-[var(--ink-2)]">Reading the listing against your skills</p>
+                        <div className="scan" />
                       </div>
                     )}
-                  </div>
+                    {aiAnalysis && !aiLoading && (
+                      <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
+                        {aiAnalysis.summary && <p className="mt-3 text-[17px]">{aiAnalysis.summary}</p>}
+                        {aiAnalysis.strengths?.length > 0 && (
+                          <>
+                            <p className="mt-4 text-[16px] font-medium">What you bring</p>
+                            <ul className="mt-1 list-disc space-y-1 pl-5 text-[16px]">
+                              {aiAnalysis.strengths.map((t, i) => <li key={i}>{t}</li>)}
+                            </ul>
+                          </>
+                        )}
+                        {aiAnalysis.action_plan?.length > 0 && (
+                          <>
+                            <p className="mt-4 text-[16px] font-medium">How to close the gap</p>
+                            <ol className="mt-1 list-decimal space-y-1 pl-5 text-[16px]">
+                              {aiAnalysis.action_plan.map((t, i) => <li key={i}>{t}</li>)}
+                            </ol>
+                          </>
+                        )}
+                        {aiAnalysis.interview_tip && (
+                          <p className="mt-4 bg-[var(--sun)] px-3 py-2 text-[16px]">
+                            <span className="font-medium">Interview tip:</span> {aiAnalysis.interview_tip}
+                          </p>
+                        )}
+                      </motion.div>
+                    )}
+                  </section>
 
-                  {aiLoading ? (
-                    <div className="py-8 flex flex-col items-center justify-center gap-3">
-                      <div className="w-10 h-10 border-3 border-purple-500/20 border-t-purple-400 rounded-full animate-spin"></div>
-                      <p className="text-sm font-bold text-purple-300/80 animate-pulse">Computing Groq AI career intelligence & gap analysis...</p>
-                    </div>
-                  ) : aiAnalysis ? (
-                    <div className="space-y-4 text-sm">
-                      {aiAnalysis.summary && (
-                        <p className="text-white/80 leading-relaxed font-medium bg-black/20 p-4 rounded-2xl border border-white/5">
-                          {aiAnalysis.summary}
-                        </p>
-                      )}
+                  {job.Processed_JD && (
+                    <details className="mt-8">
+                      <summary className="cursor-pointer text-[17px]">Read the listing</summary>
+                      <p className="mt-3 max-h-[260px] overflow-auto pr-2 text-[16px] leading-relaxed text-[var(--paper-3)]" data-lenis-prevent>
+                        {job.Processed_JD}
+                      </p>
+                    </details>
+                  )}
 
-                      {aiAnalysis.strengths && aiAnalysis.strengths.length > 0 && (
-                        <div>
-                          <h4 className="text-xs font-black text-green-400 uppercase tracking-wider mb-2">⭐ Your Key Strengths</h4>
-                          <ul className="space-y-1.5 pl-2 text-white/70">
-                            {aiAnalysis.strengths.map((str, idx) => (
-                              <li key={idx} className="flex items-start gap-2">
-                                <span className="text-green-400">✓</span>
-                                <span>{str}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {aiAnalysis.action_plan && aiAnalysis.action_plan.length > 0 && (
-                        <div>
-                          <h4 className="text-xs font-black text-pink-400 uppercase tracking-wider mb-2">🎯 Recommended Upskilling Roadmap</h4>
-                          <ul className="space-y-1.5 pl-2 text-white/70">
-                            {aiAnalysis.action_plan.map((step, idx) => (
-                              <li key={idx} className="flex items-start gap-2">
-                                <span className="text-pink-400 font-bold">→</span>
-                                <span>{step}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-
-                      {aiAnalysis.interview_tip && (
-                        <div className="bg-purple-500/10 border border-purple-500/20 p-3.5 rounded-2xl">
-                          <h4 className="text-xs font-black text-purple-300 uppercase tracking-wider mb-1">💡 Pro Interview Tip</h4>
-                          <p className="text-white/75 text-xs leading-relaxed">{aiAnalysis.interview_tip}</p>
-                        </div>
-                      )}
-                    </div>
-                  ) : null}
-                </div>
-
-                {/* Job Scope & Missing Skills */}
-                <div>
-                  <h3 className="text-sm font-black text-purple-400 uppercase tracking-[0.2em] mb-4">Core Competencies & Scope</h3>
-                  <p className="text-white/70 leading-relaxed text-base font-medium">{selectedJobDescription}</p>
-                </div>
-
-                {missingSkills && missingSkills.length > 0 && (
-                  <div>
-                    <h3 className="text-sm font-black text-pink-400 uppercase tracking-[0.2em] mb-4">Identified Growth Areas</h3>
-                    <div className="flex flex-wrap gap-2.5">
-                      {missingSkills.map((skill, index) => (
-                        <span key={index} className="bg-white/5 border border-white/10 text-white font-bold px-4 py-2 rounded-xl text-xs backdrop-blur-md shadow-lg group hover:border-pink-500/50 transition-all duration-300">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Footer */}
-              <div className="bg-white/5 backdrop-blur-3xl px-10 py-6 flex flex-col md:flex-row gap-4 justify-end border-t border-white/10">
-                <button
-                  onClick={closeModal}
-                  className="bg-white/5 text-white font-black py-3.5 px-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
-                >
-                  Close
-                </button>
-                <button
-                  onClick={handleViewSimilarJobs}
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-black py-3.5 px-8 rounded-2xl hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transform hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  Discover Parallel Paths
-                  <span>→</span>
-                </button>
-              </div>
-            </div>
+                  <button onClick={handleViewSimilarJobs} disabled={similarLoading} className="btn btn--sun mt-8">
+                    {similarLoading ? 'Finding…' : 'Find similar jobs'} <span className="arrow" aria-hidden="true">→</span>
+                  </button>
+                </motion.article>
+              )}
+            </AnimatePresence>
           </div>
-        )}
-
-      </div>
-      <Toaster />
+        </section>
+      )}
+      <Toaster toastOptions={{ style: { borderRadius: 0, background: 'var(--ink)', color: 'var(--paper)', fontFamily: 'var(--serif)' } }} />
     </div>
   );
 }
